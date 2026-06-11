@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a Primal Lux Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; --gray-bg:#F5F6F2; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-light); }
+        .logo { font-size:1.8rem; font-weight:800; background:linear-gradient(135deg, var(--forest), var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none; }
+        .nav-links { display:flex; gap:2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; transition:0.2s; }
+        .nav-links a:hover { color:var(--gold); }
+        .btn-primary, .btn-outline, .btn-gold { display:inline-block; padding:0.8rem 1.8rem; border-radius:40px; font-weight:600; text-decoration:none; transition:0.2s; font-size:0.9rem; border:none; cursor:pointer; }
+        .btn-primary { background:var(--forest); color:white; }
+        .btn-primary:hover { background:#1C553F; transform:translateY(-2px); }
+        .btn-gold { background:var(--gold); color:var(--charcoal); }
+        .btn-gold:hover { background:#C29E2E; transform:translateY(-2px); }
+        .section-title { font-size:2rem; font-weight:700; margin-bottom:1rem; color:var(--charcoal); position:relative; }
+        .section-title:after { content:''; position:absolute; bottom:-12px; left:0; width:70px; height:3px; background:var(--gold); }
+        .developer-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .developer-header h2 { font-size:2.2rem; margin-bottom:0.5rem; }
+        .services-grid, .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin:2rem 0; }
+        .service-card, .pricing-card { background:white; border-radius:28px; padding:1.8rem; border:1px solid var(--border-light); transition:0.2s; }
+        .service-card i, .pricing-card i { font-size:2rem; color:var(--gold); margin-bottom:1rem; }
+        .pricing-card .price { font-size:2rem; font-weight:800; color:var(--forest); margin:0.5rem 0; }
+        .pricing-card ul { margin:1rem 0; list-style:none; }
+        .pricing-card li { margin:0.5rem 0; font-size:0.85rem; display:flex; align-items:center; gap:8px; }
+        .pricing-card li i { font-size:0.8rem; color:var(--gold); margin-bottom:0; }
+        .custom-package { background:var(--gray-bg); border-radius:32px; padding:2rem; margin:2rem 0; }
+        .custom-package textarea, .custom-package input { width:100%; padding:1rem; margin-bottom:1rem; border:1px solid var(--border-light); border-radius:20px; font-family:inherit; }
+        .contact-buttons { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin:2rem 0; }
+        .contact-btn { display:inline-flex; align-items:center; gap:8px; padding:0.8rem 1.5rem; border-radius:40px; font-weight:600; text-decoration:none; background:var(--forest); color:white; transition:0.2s; }
+        .contact-btn.whatsapp { background:#25D366; }
+        .contact-btn.email { background:#2C3E50; }
+        .contact-btn.calendly { background:var(--gold); color:var(--charcoal); }
+        .contact-btn:hover { transform:translateY(-2px); filter:brightness(1.05); }
+        footer { padding:2.5rem 0; text-align:center; color:#6B7B7B; font-size:0.8rem; margin-top:2rem; }
+        @media (max-width:780px) { .container { padding:0 1.2rem; } .navbar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">PRIMAL LUX</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <!-- Dynamic developer name from URL -->
+    <div class="developer-header" id="developerHeader">
+        <h2 id="devName">Loading...</h2>
+        <p id="devRole">Specialist</p>
+        <p>Let’s build something extraordinary together.</p>
+    </div>
+
+    <!-- Things we do (Shopify solutions) -->
+    <h2 class="section-title">✨ What we solve on Shopify</h2>
+    <div class="services-grid">
+        <div class="service-card"><i class="fas fa-chart-line"></i><h3>Low conversion rates</h3><p>Psychology-driven CRO, A/B testing, and checkout flow fixes.</p></div>
+        <div class="service-card"><i class="fas fa-mobile-alt"></i><h3>Mobile experience issues</h3><p>Mobile-first design, speed optimization, and responsive fixes.</p></div>
+        <div class="service-card"><i class="fas fa-cart-shopping"></i><h3>Cart abandonment</h3><p>Abandoned cart flows, urgency triggers, and post-purchase upsells.</p></div>
+        <div class="service-card"><i class="fas fa-tags"></i><h3>Brand perception</h3><p>Premium visual identity, luxury positioning, and trust signals.</p></div>
+        <div class="service-card"><i class="fas fa-database"></i><h3>Data & analytics setup</h3><p>GA4, Hotjar, Microsoft Clarity – track what actually matters.</p></div>
+        <div class="service-card"><i class="fas fa-headset"></i><h3>Customer support systems</h3><p>Helpdesk integration, automated replies, and friction reduction.</p></div>
+    </div>
+
+    <!-- Pricing tiers -->
+    <h2 class="section-title">💰 Investment plans</h2>
+    <div class="pricing-grid">
+        <div class="pricing-card"><i class="fas fa-rocket"></i><h3>Quick Fix</h3><div class="price">$150 USD</div><ul><li><i class="fas fa-check-circle"></i> Single issue resolution</li><li><i class="fas fa-check-circle"></i> 24h turnaround</li><li><i class="fas fa-check-circle"></i> Basic CRO audit</li></ul></div>
+        <div class="pricing-card"><i class="fas fa-chart-simple"></i><h3>Growth Package</h3><div class="price">$500 USD</div><ul><li><i class="fas fa-check-circle"></i> Full product page optimization</li><li><i class="fas fa-check-circle"></i> Mobile responsiveness fix</li><li><i class="fas fa-check-circle"></i> Abandoned cart setup</li></ul></div>
+        <div class="pricing-card"><i class="fas fa-gem"></i><h3>Premium Brand Lift</h3><div class="price">$1,500 USD</div><ul><li><i class="fas fa-check-circle"></i> Complete brand identity system</li><li><i class="fas fa-check-circle"></i> High‑ticket presentation redesign</li><li><i class="fas fa-check-circle"></i> Trust & authority optimization</li></ul></div>
+        <div class="pricing-card"><i class="fas fa-crown"></i><h3>Advanced Conversion Suite</h3><div class="price">$2,500 USD</div><ul><li><i class="fas fa-check-circle"></i> Full conversion audit + implementation</li><li><i class="fas fa-check-circle"></i> Advanced analytics & heatmaps</li><li><i class="fas fa-check-circle"></i> Checkout flow psychology redesign</li></ul></div>
+        <div class="pricing-card"><i class="fas fa-building"></i><h3>Enterprise Overhaul</h3><div class="price">$4,000+ USD</div><ul><li><i class="fas fa-check-circle"></i> Complete store rebuild (design + dev)</li><li><i class="fas fa-check-circle"></i> Custom features & integrations</li><li><i class="fas fa-check-circle"></i> Ongoing CRO & strategy retainer</li></ul></div>
+    </div>
+
+    <!-- Custom package form -->
+    <div class="custom-package">
+        <h3 style="font-size:1.6rem; margin-bottom:1rem;">🎨 Custom package – Tailored to your vision</h3>
+        <p style="margin-bottom:1rem;">Describe exactly what you need, and we’ll build a price & plan around your goals.</p>
+        <textarea id="customRequest" rows="4" placeholder="e.g., I need a full Shopify migration, custom product filters, and a loyalty program..."></textarea>
+        <input type="text" id="customBudget" placeholder="Your estimated budget (optional)">
+        <button id="customQuoteBtn" class="btn-gold">Request custom quote →</button>
+        <div id="customFeedback" style="margin-top:1rem; font-size:0.85rem; color:var(--forest);"></div>
+    </div>
+
+    <!-- Contact developer section -->
+    <div style="text-align:center; margin:3rem 0 1rem;">
+        <h2 class="section-title" style="display:inline-block;">📞 Ready to hire?</h2>
+    </div>
+    <div class="contact-buttons" id="contactButtons">
+        <!-- dynamic contact buttons with developer name prefilled -->
+    </div>
+    <p style="text-align:center; font-size:0.8rem; color:#6D8484;">Choose any method – we’ll get back to you within 2 hours.</p>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div>
+        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Get developer name from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    let developerName = urlParams.get('developer');
+    if (!developerName) developerName = "a Primal Lux expert";
+    else developerName = decodeURIComponent(developerName);
+
+    // Simple mapping for roles (optional)
+    const roleMap = {
+        "Adenike O.": "Lead Conversion Specialist",
+        "Vas Horland": "Creative Director & Team Lead",
+        "Oliver King": "Lead Store Designer & Developer",
+        "Abolade Bayonle": "QA & Optimization Specialist",
+        "Daniel Reeves": "Conversion Optimization Specialist",
+        "Ethan Cole": "Brand Identity Strategist"
+    };
+    const defaultRole = "E‑commerce & CRO Specialist";
+    const developerRole = roleMap[developerName] || defaultRole;
+
+    // Update header
+    document.getElementById('devName').innerText = developerName;
+    document.getElementById('devRole').innerHTML = developerRole + " <i class='fas fa-star' style='color:var(--gold);'></i>";
+
+    // Build contact buttons with pre-filled message
+    const message = `Hi ${developerName}, I'm interested in hiring you. I saw your profile on Primal Lux and would love to discuss a project.`;
+    const encodedMsg = encodeURIComponent(message);
+    const emailSubject = encodeURIComponent(`Hire request for ${developerName}`);
+    const emailBody = encodeURIComponent(message + "\n\nMy project details: ");
+
+    const contactContainer = document.getElementById('contactButtons');
+    contactContainer.innerHTML = `
+        <a href="https://wa.me/?text=${encodedMsg}" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:primaluxecommerce@gmail.com?subject=${emailSubject}&body=${emailBody}" class="contact-btn email"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn calendly"><i class="fas fa-calendar-check"></i> Schedule a call</a>
+    `;
+
+    // Custom quote logic
+    const quoteBtn = document.getElementById('customQuoteBtn');
+    const customFeedback = document.getElementById('customFeedback');
+    quoteBtn.addEventListener('click', () => {
+        const request = document.getElementById('customRequest').value.trim();
+        const budget = document.getElementById('customBudget').value.trim();
+        if (!request) {
+            customFeedback.innerHTML = "⚠️ Please describe your project needs first.";
+            customFeedback.style.color = "#B84C2C";
+            return;
+        }
+        // Prepare email with custom request
+        const subject = `Custom project request for ${developerName}`;
+        const body = `Developer: ${developerName}\n\nProject description:\n${request}\n\nBudget (if provided): ${budget || "Not specified"}\n\nPlease provide a tailored quote.`;
+        window.location.href = `mailto:primaluxecommerce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        customFeedback.innerHTML = "✨ Redirecting to email... Feel free to add more details before sending!";
+        customFeedback.style.color = "var(--forest)";
+    });
+</script>
+</body>
+</html>
