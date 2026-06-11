@@ -58,53 +58,8 @@
     </nav>
 </div>
 
-<div class="container">
-    <!-- Dynamic developer name from URL -->
-    <div class="developer-header" id="developerHeader">
-        <h2 id="devName">Loading...</h2>
-        <p id="devRole">Specialist</p>
-        <p>Let’s build something extraordinary together.</p>
-    </div>
-
-    <!-- Things we do (Shopify solutions) -->
-    <h2 class="section-title">✨ What we solve on Shopify</h2>
-    <div class="services-grid">
-        <div class="service-card"><i class="fas fa-chart-line"></i><h3>Low conversion rates</h3><p>Psychology-driven CRO, A/B testing, and checkout flow fixes.</p></div>
-        <div class="service-card"><i class="fas fa-mobile-alt"></i><h3>Mobile experience issues</h3><p>Mobile-first design, speed optimization, and responsive fixes.</p></div>
-        <div class="service-card"><i class="fas fa-cart-shopping"></i><h3>Cart abandonment</h3><p>Abandoned cart flows, urgency triggers, and post-purchase upsells.</p></div>
-        <div class="service-card"><i class="fas fa-tags"></i><h3>Brand perception</h3><p>Premium visual identity, luxury positioning, and trust signals.</p></div>
-        <div class="service-card"><i class="fas fa-database"></i><h3>Data & analytics setup</h3><p>GA4, Hotjar, Microsoft Clarity – track what actually matters.</p></div>
-        <div class="service-card"><i class="fas fa-headset"></i><h3>Customer support systems</h3><p>Helpdesk integration, automated replies, and friction reduction.</p></div>
-    </div>
-
-    <!-- Pricing tiers -->
-    <h2 class="section-title">💰 Investment plans</h2>
-    <div class="pricing-grid">
-        <div class="pricing-card"><i class="fas fa-rocket"></i><h3>Quick Fix</h3><div class="price">$150 USD</div><ul><li><i class="fas fa-check-circle"></i> Single issue resolution</li><li><i class="fas fa-check-circle"></i> 24h turnaround</li><li><i class="fas fa-check-circle"></i> Basic CRO audit</li></ul></div>
-        <div class="pricing-card"><i class="fas fa-chart-simple"></i><h3>Growth Package</h3><div class="price">$500 USD</div><ul><li><i class="fas fa-check-circle"></i> Full product page optimization</li><li><i class="fas fa-check-circle"></i> Mobile responsiveness fix</li><li><i class="fas fa-check-circle"></i> Abandoned cart setup</li></ul></div>
-        <div class="pricing-card"><i class="fas fa-gem"></i><h3>Premium Brand Lift</h3><div class="price">$1,500 USD</div><ul><li><i class="fas fa-check-circle"></i> Complete brand identity system</li><li><i class="fas fa-check-circle"></i> High‑ticket presentation redesign</li><li><i class="fas fa-check-circle"></i> Trust & authority optimization</li></ul></div>
-        <div class="pricing-card"><i class="fas fa-crown"></i><h3>Advanced Conversion Suite</h3><div class="price">$2,500 USD</div><ul><li><i class="fas fa-check-circle"></i> Full conversion audit + implementation</li><li><i class="fas fa-check-circle"></i> Advanced analytics & heatmaps</li><li><i class="fas fa-check-circle"></i> Checkout flow psychology redesign</li></ul></div>
-        <div class="pricing-card"><i class="fas fa-building"></i><h3>Enterprise Overhaul</h3><div class="price">$4,000+ USD</div><ul><li><i class="fas fa-check-circle"></i> Complete store rebuild (design + dev)</li><li><i class="fas fa-check-circle"></i> Custom features & integrations</li><li><i class="fas fa-check-circle"></i> Ongoing CRO & strategy retainer</li></ul></div>
-    </div>
-
-    <!-- Custom package form -->
-    <div class="custom-package">
-        <h3 style="font-size:1.6rem; margin-bottom:1rem;">🎨 Custom package – Tailored to your vision</h3>
-        <p style="margin-bottom:1rem;">Describe exactly what you need, and we’ll build a price & plan around your goals.</p>
-        <textarea id="customRequest" rows="4" placeholder="e.g., I need a full Shopify migration, custom product filters, and a loyalty program..."></textarea>
-        <input type="text" id="customBudget" placeholder="Your estimated budget (optional)">
-        <button id="customQuoteBtn" class="btn-gold">Request custom quote →</button>
-        <div id="customFeedback" style="margin-top:1rem; font-size:0.85rem; color:var(--forest);"></div>
-    </div>
-
-    <!-- Contact developer section -->
-    <div style="text-align:center; margin:3rem 0 1rem;">
-        <h2 class="section-title" style="display:inline-block;">📞 Ready to hire?</h2>
-    </div>
-    <div class="contact-buttons" id="contactButtons">
-        <!-- dynamic contact buttons with developer name prefilled -->
-    </div>
-    <p style="text-align:center; font-size:0.8rem; color:#6D8484;">Choose any method – we’ll get back to you within 2 hours.</p>
+<div class="container" id="hireContent">
+    <!-- Dynamic content will be injected here -->
 </div>
 
 <footer>
@@ -116,42 +71,190 @@
 </footer>
 
 <script>
-    // Get developer name from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    let developerName = urlParams.get('developer');
-    if (!developerName) developerName = "a Primal Lux expert";
-    else developerName = decodeURIComponent(developerName);
-
-    // Simple mapping for roles (optional)
-    const roleMap = {
-        "Adenike O.": "Lead Conversion Specialist",
-        "Vas Horland": "Creative Director & Team Lead",
-        "Oliver King": "Lead Store Designer & Developer",
-        "Abolade Bayonle": "QA & Optimization Specialist",
-        "Daniel Reeves": "Conversion Optimization Specialist",
-        "Ethan Cole": "Brand Identity Strategist"
+    // ======================== DEVELOPER DATABASE ========================
+    // Each developer has: name, role, tagline, uniqueServices (array of 6+ problems), uniquePricing (array of packages)
+    const developers = {
+        "Adenike O.": {
+            role: "Lead Conversion Specialist",
+            tagline: "I fix hidden revenue leaks & turn browsers into buyers.",
+            services: [
+                "🚀 Low conversion rates – psychology‑driven CRO & A/B testing",
+                "📉 High cart abandonment – urgency triggers & checkout flow fixes",
+                "📱 Mobile checkout friction – responsive fixes & one‑tap payments",
+                "🔍 Poor product discovery – search & filtering optimization",
+                "💰 Weak upsell/cross‑sell – post‑purchase & cart add‑ons",
+                "📊 Untracked analytics – GA4, Hotjar, Clarity setup"
+            ],
+            pricing: [
+                { name: "Quick CRO Fix", price: 150, features: ["Single page conversion audit", "1 urgent fix", "24h delivery"] },
+                { name: "Growth Bundle", price: 500, features: ["Full product page optimization", "Abandoned cart setup", "Mobile responsiveness"] },
+                { name: "Checkout Rebuild", price: 1200, features: ["Complete checkout psychology redesign", "Trust badges & urgency", "A/B test plan"] },
+                { name: "Advanced CRO Suite", price: 2500, features: ["Full funnel audit + implementation", "Heatmap & session replay analysis", "3 months of ongoing CRO"] },
+                { name: "Enterprise Conversion", price: 4000, features: ["End‑to‑end conversion program", "Custom dashboard & reporting", "Dedicated strategist"] }
+            ]
+        },
+        "Vas Horland": {
+            role: "Creative Director & Team Lead",
+            tagline: "I build premium brand identities that feel expensive before the price tag.",
+            services: [
+                "🎨 Generic brand perception – full luxury rebranding",
+                "🖼️ Inconsistent visual language – design systems & guidelines",
+                "📸 Low‑quality product presentation – premium photography direction",
+                "🧩 Weak storytelling – brand narrative & positioning",
+                "🏷️ Poor high‑ticket presentation – exclusivity & trust design",
+                "🎭 Unclear differentiation – competitor brand gap analysis"
+            ],
+            pricing: [
+                { name: "Brand Foundation", price: 400, features: ["Logo + color palette", "Basic brand guidelines", "Font system"] },
+                { name: "Visual Identity Boost", price: 900, features: ["Complete brand identity kit", "Social media templates", "Presentation deck"] },
+                { name: "Luxury Brand System", price: 1800, features: ["Full visual identity", "Packaging mockups", "Brand strategy document"] },
+                { name: "Creative Direction", price: 2800, features: ["Full rebrand + art direction", "Campaign assets", "Launch strategy"] },
+                { name: "White‑Glove Suite", price: 4500, features: ["Complete brand ecosystem", "Ongoing creative retainer", "VIP support"] }
+            ]
+        },
+        "Oliver King": {
+            role: "Lead Store Designer & Developer",
+            tagline: "I build high‑converting Shopify stores that are fast, beautiful, and custom.",
+            services: [
+                "💻 Slow page speed – performance optimization & core web vitals",
+                "🎨 Outdated theme design – custom liquid & section development",
+                "🛠️ Broken integrations – app configurations & API fixes",
+                "📦 Complex product customization – variant options & bundles",
+                "🔐 Security & backup issues – store hardening & recovery plans",
+                "🌐 Multi‑language/currency – international store setup"
+            ],
+            pricing: [
+                { name: "Quick Fix", price: 150, features: ["Single bug/issue fix", "Minor CSS/JS adjustment", "2h response"] },
+                { name: "Theme Overhaul", price: 800, features: ["Custom section development", "Speed optimization", "Mobile refinement"] },
+                { name: "Full Store Build (Basic)", price: 2200, features: ["Custom Shopify theme", "Up to 10 products", "Basic SEO setup"] },
+                { name: "Advanced Store Dev", price: 3800, features: ["Fully custom store", "Unlimited products", "App integrations", "Ongoing support"] },
+                { name: "Enterprise Platform", price: 5500, features: ["Headless or custom checkout", "ERP/CRM integration", "Dedicated developer"] }
+            ]
+        },
+        "Abolade Bayonle": {
+            role: "QA & Optimization Specialist",
+            tagline: "I find the silent bugs and speed killers that cost you sales.",
+            services: [
+                "🐛 Hidden frontend bugs – cross‑browser & device testing",
+                "⏱️ Slow load times – image compression & caching strategies",
+                "📉 Poor Lighthouse scores – technical SEO & accessibility fixes",
+                "🔄 Broken checkout flows – order processing errors",
+                "📧 Email deliverability issues – Klaviyo/Omnisend setup",
+                "🛡️ Security vulnerabilities – PCI compliance & SSL checks"
+            ],
+            pricing: [
+                { name: "Site Audit", price: 200, features: ["Full performance report", "Top 5 issues fixed", "Lighthouse score improvement"] },
+                { name: "Bug Hunt", price: 450, features: ["Comprehensive QA testing", "Unlimited bug fixes (1 week)", "Compatibility report"] },
+                { name: "Speed Surge", price: 850, features: ["Aggressive speed optimization", "Core Web Vitals pass", "Ongoing monitoring"] },
+                { name: "Full Technical Overhaul", price: 1900, features: ["Complete QA + speed + security", "CI/CD testing setup", "Monthly retainer option"] },
+                { name: "Enterprise Assurance", price: 3500, features: ["Dedicated QA engineer", "Automated testing pipeline", "24/7 monitoring"] }
+            ]
+        },
+        "Daniel Reeves": {
+            role: "Conversion Optimization Specialist",
+            tagline: "I turn data into decisions – more revenue from the same traffic.",
+            services: [
+                "📊 No clear conversion data – analytics setup & event tracking",
+                "🧪 Untested pages – A/B testing & experiment design",
+                "🔄 Leaky funnels – funnel analysis & drop‑off fixes",
+                "💳 Payment hesitation – trust signals & payment method optimization",
+                "📈 Low AOV – post‑purchase upsell & bundle strategies",
+                "📉 High bounce rate – engagement & scroll depth optimization"
+            ],
+            pricing: [
+                { name: "Data Setup", price: 180, features: ["GA4 + GTM implementation", "Ecommerce tracking", "Custom dashboard"] },
+                { name: "Single Funnel Fix", price: 500, features: ["Analyze one funnel (checkout/cart)", "Implement 2 changes", "Before/after report"] },
+                { name: "CRO Intensive", price: 1500, features: ["Full funnel audit", "3 A/B test ideas", "Implementation of top fixes"] },
+                { name: "Revenue Program", price: 2800, features: ["Quarterly CRO partnership", "Unlimited A/B tests", "Weekly insights"] },
+                { name: "Enterprise CRO", price: 4500, features: ["Dedicated CRO team", "Predictive analytics", "Revenue share option"] }
+            ]
+        },
+        "Ethan Cole": {
+            role: "Brand Identity Strategist",
+            tagline: "I craft premium brand systems that command higher prices.",
+            services: [
+                "🏷️ Cheap brand perception – premium positioning & tone of voice",
+                "📄 Inconsistent messaging – copy & visual alignment",
+                "🎯 Wrong audience targeting – buyer persona & value prop",
+                "📚 No brand guidelines – full identity system creation",
+                "🏆 Weak authority – trust signals & social proof architecture",
+                "🔄 Scaling issues – brand architecture for multiple sub‑brands"
+            ],
+            pricing: [
+                { name: "Brand Spark", price: 250, features: ["Brand messaging worksheet", "Mood board", "Competitor audit"] },
+                { name: "Identity Kit", price: 750, features: ["Logo suite + color palette", "Typography system", "Basic guideline deck"] },
+                { name: "Premium Brand World", price: 1700, features: ["Complete brand identity", "Voice & tone guide", "Launch assets"] },
+                { name: "Luxury Positioning", price: 3000, features: ["Full repositioning strategy", "High‑ticket presentation", "Investor deck"] },
+                { name: "Brand as a Service", price: 5000, features: ["Ongoing brand direction", "Quarterly refresh", "Unlimited assets"] }
+            ]
+        }
     };
-    const defaultRole = "E‑commerce & CRO Specialist";
-    const developerRole = roleMap[developerName] || defaultRole;
 
-    // Update header
-    document.getElementById('devName').innerText = developerName;
-    document.getElementById('devRole').innerHTML = developerRole + " <i class='fas fa-star' style='color:var(--gold);'></i>";
+    // Helper: get developer from URL, fallback to first
+    const urlParams = new URLSearchParams(window.location.search);
+    let devName = urlParams.get('developer');
+    if (!devName || !developers[devName]) {
+        devName = "Adenike O."; // default
+    }
 
-    // Build contact buttons with pre-filled message
-    const message = `Hi ${developerName}, I'm interested in hiring you. I saw your profile on Primal Lux and would love to discuss a project.`;
+    const dev = developers[devName];
+
+    // Build the HTML
+    const container = document.getElementById('hireContent');
+    container.innerHTML = `
+        <div class="developer-header">
+            <h2>${devName}</h2>
+            <p><strong>${dev.role}</strong> <i class="fas fa-star" style="color:var(--gold);"></i></p>
+            <p>${dev.tagline}</p>
+        </div>
+
+        <h2 class="section-title">🔧 Shopify problems ${devName} solves</h2>
+        <div class="services-grid">
+            ${dev.services.map(s => `<div class="service-card"><i class="fas fa-bug"></i><h3>${s.split('–')[0]}</h3><p>${s.split('–')[1] || s}</p></div>`).join('')}
+        </div>
+
+        <h2 class="section-title">💰 Investment plans (${devName})</h2>
+        <div class="pricing-grid">
+            ${dev.pricing.map(p => `
+                <div class="pricing-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>${p.name}</h3>
+                    <div class="price">$${p.price} USD</div>
+                    <ul>${p.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}</ul>
+                </div>
+            `).join('')}
+        </div>
+
+        <div class="custom-package">
+            <h3 style="font-size:1.6rem; margin-bottom:1rem;">✨ Custom package – Tell me what you need</h3>
+            <p style="margin-bottom:1rem;">Not seeing exactly what you're looking for? Describe your project and I'll tailor a price & plan.</p>
+            <textarea id="customRequest" rows="4" placeholder="Example: I need a complete Shopify migration, custom loyalty app, and subscription integration..."></textarea>
+            <input type="text" id="customBudget" placeholder="Your estimated budget (optional)">
+            <button id="customQuoteBtn" class="btn-gold">Request custom quote →</button>
+            <div id="customFeedback" style="margin-top:1rem; font-size:0.85rem; color:var(--forest);"></div>
+        </div>
+
+        <div style="text-align:center; margin:3rem 0 1rem;">
+            <h2 class="section-title" style="display:inline-block;">📞 Ready to hire ${devName}?</h2>
+        </div>
+        <div class="contact-buttons" id="contactButtons"></div>
+        <p style="text-align:center; font-size:0.8rem; color:#6D8484;">Choose any method – expect a reply within 2 hours.</p>
+    `;
+
+    // Contact buttons with prefilled message
+    const message = `Hi ${devName}, I'm interested in hiring you. I saw your profile on Primal Lux and would love to discuss a project.`;
     const encodedMsg = encodeURIComponent(message);
-    const emailSubject = encodeURIComponent(`Hire request for ${developerName}`);
+    const emailSubject = encodeURIComponent(`Hire request for ${devName}`);
     const emailBody = encodeURIComponent(message + "\n\nMy project details: ");
 
-    const contactContainer = document.getElementById('contactButtons');
-    contactContainer.innerHTML = `
+    const contactDiv = document.getElementById('contactButtons');
+    contactDiv.innerHTML = `
         <a href="https://wa.me/?text=${encodedMsg}" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="mailto:primaluxecommerce@gmail.com?subject=${emailSubject}&body=${emailBody}" class="contact-btn email"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn calendly"><i class="fas fa-calendar-check"></i> Schedule a call</a>
     `;
 
-    // Custom quote logic
+    // Custom quote button
     const quoteBtn = document.getElementById('customQuoteBtn');
     const customFeedback = document.getElementById('customFeedback');
     quoteBtn.addEventListener('click', () => {
@@ -162,9 +265,8 @@
             customFeedback.style.color = "#B84C2C";
             return;
         }
-        // Prepare email with custom request
-        const subject = `Custom project request for ${developerName}`;
-        const body = `Developer: ${developerName}\n\nProject description:\n${request}\n\nBudget (if provided): ${budget || "Not specified"}\n\nPlease provide a tailored quote.`;
+        const subject = `Custom project request for ${devName}`;
+        const body = `Developer: ${devName}\n\nProject description:\n${request}\n\nBudget (if provided): ${budget || "Not specified"}\n\nPlease provide a tailored quote.`;
         window.location.href = `mailto:primaluxecommerce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         customFeedback.innerHTML = "✨ Redirecting to email... Feel free to add more details before sending!";
         customFeedback.style.color = "var(--forest)";
