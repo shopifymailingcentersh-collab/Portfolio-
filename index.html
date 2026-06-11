@@ -377,10 +377,53 @@
             color: var(--forest);
             text-decoration: none;
         }
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--forest);
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 0.85rem;
+            width: fit-content;
+        }
+        .contact-btn.outline-gold {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--charcoal);
+        }
+        .contact-btn.outline-gold:hover {
+            background: var(--gold);
+            color: var(--matte-black);
+        }
+        .contact-btn i {
+            font-size: 1rem;
+        }
         .call-btn {
-            margin-top: 1rem;
+            background: var(--gold);
+            color: var(--charcoal);
             width: 100%;
             text-align: center;
+            justify-content: center;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+        }
+        .whatsapp-btn:hover {
+            background: #20b859;
         }
 
         footer {
@@ -553,7 +596,7 @@
     </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT SECTION with updated buttons and links -->
 <section id="contact">
     <div class="container">
         <h2 class="section-title editable-text" data-edit-id="contact-title">LET'S BUILD SOMETHING THAT CONVERTS</h2>
@@ -587,11 +630,31 @@
             </div>
             <div class="contact-info">
                 <h3 class="editable-text" data-edit-id="direct-contact" style="margin-bottom:0.5rem;">DIRECT CONTACT</h3>
-                <a href="mailto:hello@primallux.co" class="editable-text" data-edit-id="email-link">📧 hello@primallux.co</a>
-                <div class="editable-text" data-edit-id="socials-label" style="margin:1rem 0 0.5rem; font-weight:600;">SOCIALS</div>
-                <a href="#">LinkedIn</a> <span style="margin:0 6px">|</span> <a href="#">Twitter/X</a> <span style="margin:0 6px">|</span> <a href="#">Instagram</a>
-                <div style="margin-top:1.5rem;">
-                    <a href="#contact" class="btn-primary call-btn" style="background:var(--forest); width:100%; display:inline-block; text-align:center;">📞 BOOK A 15-MINUTE DISCOVERY CALL</a>
+                
+                <!-- Email link (button style) -->
+                <a href="mailto:primaluxecommerce@gmail.com" class="contact-btn" style="background: var(--forest);">
+                    <i class="fas fa-envelope"></i> primaluxecommerce@gmail.com
+                </a>
+                
+                <!-- LinkedIn button -->
+                <a href="https://www.linkedin.com/in/abolade-bayonle-455846415" target="_blank" class="contact-btn outline-gold">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                
+                <!-- Schedule a call button (Calendly) -->
+                <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn" style="background: var(--gold); color: var(--charcoal);">
+                    <i class="fas fa-calendar-check"></i> Schedule a call
+                </a>
+                
+                <!-- WhatsApp optional button -->
+                <a href="https://wa.link/ugoqd7" target="_blank" class="contact-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn call-btn" style="display: flex; width: 100%;">
+                        📞 BOOK A 15-MINUTE DISCOVERY CALL
+                    </a>
                 </div>
             </div>
         </div>
