@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Primal Lux | Premium Creative Studio</title>
+    <title>Primal Lux | E‑commerce Conversion & Luxury Branding</title>
     <!-- Google Fonts + Font Awesome 6 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,21 +16,21 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;  /* crisp white background */
-            color: #1E2A2A;             /* deep charcoal for text */
+            background: #FCFCF8;
+            color: #1A2A2A;
             line-height: 1.5;
             scroll-behavior: smooth;
         }
 
-        /* color variables: matte black, emerald forest, champagne gold */
         :root {
-            --charcoal: #1E2A2A;
-            --matte-black: #1F1F1F;
+            --charcoal: #1E2F2F;
             --forest: #0F3B2C;
             --gold: #D4AF37;
-            --gold-light: #F5E17A;
+            --gold-light: #F2E2B0;
+            --matte-black: #212121;
             --white: #FFFFFF;
-            --gray-light: #F8F9FC;
+            --gray-bg: #F5F6F2;
+            --border-light: #E8EBE4;
         }
 
         .container {
@@ -39,7 +39,7 @@
             padding: 0 2rem;
         }
 
-        /* ---------- NAVIGATION (premium minimalist) ---------- */
+        /* navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -47,25 +47,23 @@
             padding: 1.2rem 0;
             flex-wrap: wrap;
             gap: 1rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            background: linear-gradient(135deg, var(--forest), var(--gold));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-decoration: none;
-            font-family: 'Inter', sans-serif;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.2rem;
-            align-items: center;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
@@ -74,158 +72,64 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.2s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
             color: var(--gold);
         }
 
-        /* edit mode toolbar */
+        /* edit tools */
         .toolbar {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.8rem;
             align-items: center;
         }
 
-        .edit-mode-btn {
-            background: rgba(212, 175, 55, 0.1);
+        .edit-mode-btn, .reset-btn {
+            background: transparent;
             border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 0.45rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-weight: 500;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
         }
 
+        .edit-mode-btn {
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
         .edit-mode-btn.active {
             background: var(--gold);
-            color: var(--matte-black);
-            border-color: var(--gold);
+            color: var(--charcoal);
         }
 
         .reset-btn {
-            background: rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(31, 31, 31, 0.2);
-            color: var(--charcoal);
-            padding: 0.45rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: 0.2s;
+            border-color: #ccc;
+            color: #5a6e6e;
         }
 
-        /* ---------- HERO SECTION (2 columns) ---------- */
-        .hero {
-            padding: 4rem 0 5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-left {
-            flex: 1.1;
-            position: relative;
-            min-width: 280px;
-        }
-
-        .hero-image {
-            width: 100%;
-            border-radius: 28px;
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
-            object-fit: cover;
-            aspect-ratio: 4 / 5;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        /* floating testimonial card (overlaps image) */
-        .floating-card {
-            position: absolute;
-            bottom: -25px;
-            right: -20px;
-            background: white;
-            backdrop-filter: blur(0px);
-            background: rgba(255, 255, 255, 0.98);
-            border-left: 6px solid var(--gold);
-            border-radius: 24px;
-            padding: 1.3rem 1.8rem;
-            max-width: 280px;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        .floating-card i {
-            color: var(--gold);
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+        /* buttons */
+        .btn-primary, .btn-outline {
             display: inline-block;
-        }
-
-        .floating-card .quote-text {
-            font-size: 0.9rem;
-            line-height: 1.45;
-            font-weight: 500;
-            color: #1e2a2a;
-            margin: 0.5rem 0 0.75rem;
-        }
-
-        .floating-card .quote-author {
-            font-weight: 700;
-            color: var(--forest);
-            font-size: 0.8rem;
-        }
-
-        .hero-right {
-            flex: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(15, 59, 44, 0.08);
-            padding: 0.3rem 1rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: var(--forest);
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.4rem;
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-        }
-
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #4A5C5C;
-            margin-bottom: 2rem;
-            border-left: 3px solid var(--gold);
-            padding-left: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-align: center;
         }
 
         .btn-primary {
             background: var(--forest);
-            border: none;
-            padding: 0.9rem 2rem;
-            font-weight: 700;
-            border-radius: 40px;
             color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            border: none;
         }
 
         .btn-primary:hover {
@@ -233,10 +137,70 @@
             transform: translateY(-2px);
         }
 
-        /* sections general */
+        .btn-outline {
+            border: 1.5px solid var(--forest);
+            color: var(--forest);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--forest);
+            color: white;
+        }
+
+        .hero {
+            padding: 4rem 0 4rem;
+        }
+
+        .hero-badge {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-subhead {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #3A4E4E;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .trusted-badge {
+            font-size: 0.85rem;
+            color: #6D8484;
+            border-top: 1px solid var(--border-light);
+            padding-top: 1.5rem;
+            display: inline-block;
+        }
+
+        /* section styling */
         section {
             padding: 5rem 0;
-            border-bottom: 1px solid #EAECF0;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .section-title {
@@ -246,146 +210,202 @@
             color: var(--charcoal);
             letter-spacing: -0.3px;
             position: relative;
-            display: inline-block;
         }
+
         .section-title:after {
             content: '';
             position: absolute;
             bottom: -12px;
             left: 0;
-            width: 60px;
+            width: 70px;
             height: 3px;
             background: var(--gold);
         }
 
-        /* about */
+        /* about layout + timeline */
         .about-grid {
             display: flex;
-            gap: 2.5rem;
             flex-wrap: wrap;
-        }
-        .about-text {
-            flex: 1;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: #2C3A3A;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
         }
 
-        /* horizontal portfolio grid (sneak peek) */
+        .about-main {
+            flex: 1.5;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-light);
+        }
+
+        .timeline-card h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-card li {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            color: #2b4747;
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            background: var(--gray-bg);
+            padding: 2rem;
+            border-radius: 32px;
+        }
+
+        .toolkit-cat h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--forest);
+        }
+
+        .toolkit-cat p {
+            color: #2E4A4A;
+        }
+
+        /* work projects grid */
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-top: 1rem;
-        }
-        .work-card {
-            background: var(--gray-light);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.25s ease;
-            border: 1px solid #EDF0F2;
-        }
-        .work-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
-            border-color: var(--gold);
-        }
-        .work-img {
-            width: 100%;
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            background-color: #E9ECEF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--forest);
-        }
-        .work-card h3 {
-            padding: 1rem 1.2rem 0.2rem;
-            font-size: 1.3rem;
-        }
-        .work-card p {
-            padding: 0 1.2rem 1.2rem;
-            color: #5A6E6E;
         }
 
-        /* reviews grid */
+        .work-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem;
+            border: 1px solid var(--border-light);
+            transition: 0.2s;
+        }
+
+        .work-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .work-card .challenge, .work-card .strategy, .work-card .result {
+            margin-top: 0.8rem;
+        }
+        .work-card strong {
+            color: var(--forest);
+        }
+
+        /* reviews & proof row */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .review-card {
-            background: white;
-            border-radius: 24px;
-            padding: 1.8rem;
-            border: 1px solid #EBEFF2;
-            transition: 0.2s;
-        }
-        .review-card i.fa-quote-left {
-            color: var(--gold);
-            opacity: 0.6;
-            font-size: 1.8rem;
-        }
-        .review-quote {
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 1rem 0 1rem;
-            color: #2C3A3A;
-        }
-        .review-author {
-            font-weight: 700;
-            color: var(--forest);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
-        /* contact */
-        .contact-form {
-            max-width: 620px;
+        .review-item {
+            background: var(--gray-bg);
+            padding: 1.5rem;
+            border-radius: 24px;
+            font-style: italic;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #F9FAFB;
-            border: 1px solid #E2E6EA;
+
+        .proof-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .proof-card {
+            background: white;
             border-radius: 20px;
-            font-family: inherit;
-            transition: 0.2s;
+            padding: 1rem;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            border: 1px solid #EAE6DA;
         }
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--gold);
+        .proof-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* contact form */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .contact-form {
+            flex: 2;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            background: white;
+            font-family: inherit;
+        }
+        .contact-info a {
+            display: block;
+            margin: 0.5rem 0;
+            color: var(--forest);
+            text-decoration: none;
+        }
+        .call-btn {
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
         }
 
         footer {
-            text-align: center;
             padding: 2.5rem 0;
+            text-align: center;
             color: #6B7B7B;
-            font-size: 0.85rem;
-            border-top: 1px solid #EDF0F2;
+            font-size: 0.8rem;
         }
 
-        /* editable text styling when edit mode active */
+        /* editable mode highlight */
         .editable-text {
             transition: 0.1s;
         }
         .edit-mode-active .editable-text {
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(212, 175, 55, 0.1);
             outline: 1px dashed var(--gold);
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: text;
-            padding: 0.1rem 0.2rem;
+            padding: 0 0.2rem;
         }
 
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; }
-            .floating-card { bottom: -15px; right: 10px; max-width: 260px; padding: 1rem; }
-            h1 { font-size: 2.5rem; }
-            .container { padding: 0 1.5rem; }
+        @media (max-width: 780px) {
+            .container { padding: 0 1.2rem; }
+            h1 { font-size: 2.4rem; }
             .navbar { flex-direction: column; align-items: flex-start; }
-            .toolbar { margin-left: auto; }
         }
     </style>
 </head>
@@ -393,10 +413,11 @@
 
 <div class="container">
     <nav class="navbar">
-        <div class="logo editable-text" data-edit-id="logo-text">PL</div>
+        <div class="logo editable-text" data-edit-id="logo">PRIMAL LUX</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#toolkit">Toolkit</a>
             <a href="#work">Work</a>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
@@ -408,271 +429,268 @@
     </nav>
 </div>
 
-<!-- HERO / HOME section -->
+<!-- HERO SECTION -->
 <section id="home">
     <div class="container hero">
-        <div class="hero-left">
-            <!-- professional photo: smiling, holding laptop, premium look -->
-            <img class="hero-image" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop" alt="Creative professional portrait" 
-                 onerror="this.src='https://placehold.co/800x1000/1F2E2A/D4AF37?text=Photo+Placeholder'">
-            <!-- Floating testimonial card overlapping image -->
-            <div class="floating-card">
-                <i class="fas fa-star-of-life"></i>
-                <div class="quote-text editable-text" data-edit-id="floating-quote">"The absolute BEST creative partner. They took our brand to a level beyond our imagination. Absolute game-changers."</div>
-                <div class="quote-author editable-text" data-edit-id="floating-author">— Sarah J., CEO, Bloom Co.</div>
-            </div>
+        <div class="hero-badge editable-text" data-edit-id="hero-badge">✦ PRIMAL LUX STUDIO</div>
+        <h1 class="editable-text" data-edit-id="hero-headline">PRIMAL LUX</h1>
+        <div class="hero-subhead editable-text" data-edit-id="hero-subhead">Luxury-Level Execution. Primal-Level Instincts.</div>
+        <div class="hero-desc editable-text" data-edit-id="hero-desc">
+            I help e-commerce brands increase conversions, elevate brand perception, and fix the silent problems costing them sales.
         </div>
-        <div class="hero-right">
-            <div class="hero-badge editable-text" data-edit-id="hero-badge">✦ PRIMAL LUX STUDIO</div>
-            <h1 class="editable-text" data-edit-id="hero-headline">PRIMAL LUX SPECIALIST</h1>
-            <div class="hero-sub editable-text" data-edit-id="hero-subhead">5+ Years of Experience | Crafting Luxury Digital Experiences</div>
-            <a href="#work" class="btn-primary"><i class="fas fa-arrow-right"></i> Explore Portfolio</a>
+        <div class="hero-buttons">
+            <a href="#work" class="btn-primary">VIEW WORK <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-outline">BOOK A CALL <i class="fas fa-calendar-alt"></i></a>
+        </div>
+        <div class="trusted-badge editable-text" data-edit-id="trusted-text">
+            Trusted by growing e-commerce brands serious about scaling beyond “good enough.”
         </div>
     </div>
 </section>
 
-<!-- ABOUT section -->
+<!-- ABOUT + EXPERIENCE TIMELINE -->
 <section id="about">
     <div class="container">
-        <h2 class="section-title editable-text" data-edit-id="about-title">About the studio</h2>
+        <h2 class="section-title editable-text" data-edit-id="about-title">ABOUT PRIMAL LUX</h2>
         <div class="about-grid">
-            <div class="about-text editable-text" data-edit-id="about-desc1">
-                <i class="fas fa-gem" style="color: var(--gold); margin-right: 8px;"></i> We are <strong>Primal Lux</strong> — a creative atelier where strategic rigor meets high-voltage aesthetics. With over half a decade of shaping iconic brand stories, we fuse deep forest sophistication with champagne gold energy.
+            <div class="about-main">
+                <div class="editable-text" data-edit-id="about-text1" style="margin-bottom:1.5rem; line-height:1.6;">
+                    Most freelancers learn tools.<br>
+                    I learned behavior.<br><br>
+                    Over the last 5 years, I've spent countless hours studying why customers buy, why stores fail silently, and why some brands feel premium before you even check the price.<br>
+                    Primal Lux was built from that understanding.<br><br>
+                    “Primal” represents instinct — the raw psychology behind attention, trust, emotion, urgency, and buying decisions.<br>
+                    “Lux” represents execution — clean design, premium presentation, smooth customer experience, and polished strategy.<br><br>
+                    Together, they create stores that don’t just look good.<br>
+                    They convert.<br><br>
+                    What started as simple Shopify customization evolved into deep e-commerce problem solving: fixing conversion leaks, improving mobile experiences, reducing checkout friction, and helping brands stop losing revenue from invisible mistakes.<br>
+                    Today, every project is approached with one belief:<br>
+                    <strong>Small details create massive differences in revenue.</strong>
+                </div>
             </div>
-            <div class="about-text editable-text" data-edit-id="about-desc2">
-                Our mission is to craft digital identities that feel exclusive, powerful, and timeless. From emerging labels to established visionaries, we deliver bespoke design ecosystems that resonate globally.
-            </div>
+        </div>
+
+        <h3 class="editable-text" data-edit-id="timeline-heading" style="font-size:1.6rem; margin: 2rem 0 1rem; color:var(--forest);">EXPERIENCE TIMELINE</h3>
+        <div class="timeline-grid">
+            <div class="timeline-card editable-text" data-edit-id="timeline1"><h3>YEAR 1 — FOUNDATION</h3><ul><li>• Shopify customization</li><li>• Brand fundamentals</li><li>• Customer psychology</li><li>• Store structure optimization</li></ul></div>
+            <div class="timeline-card editable-text" data-edit-id="timeline2"><h3>YEAR 2 — CONVERSION FOCUS</h3><ul><li>• Product page optimization</li><li>• Mobile-first experiences</li><li>• Checkout flow improvements</li><li>• User behavior analysis</li></ul></div>
+            <div class="timeline-card editable-text" data-edit-id="timeline3"><h3>YEAR 3 — BRAND POSITIONING</h3><ul><li>• Premium brand systems</li><li>• High-ticket presentation</li><li>• Visual hierarchy</li><li>• Trust optimization</li></ul></div>
+            <div class="timeline-card editable-text" data-edit-id="timeline4"><h3>YEAR 4 — STRATEGY & EXECUTION</h3><ul><li>• Full conversion audits</li><li>• Revenue-focused redesigns</li><li>• Scaling systems</li><li>• Customer retention improvements</li></ul></div>
+            <div class="timeline-card editable-text" data-edit-id="timeline5"><h3>YEAR 5 — PRIMAL LUX</h3><ul><li>• Premium e-commerce positioning</li><li>• Conversion psychology</li><li>• Luxury brand execution</li><li>• High-performance storefront systems</li></ul></div>
         </div>
     </div>
 </section>
 
-<!-- WORK section: horizontal grid sneek peek -->
+<!-- TOOLKIT SECTION -->
+<section id="toolkit">
+    <div class="container">
+        <h2 class="section-title editable-text" data-edit-id="toolkit-title">THE STACK BEHIND THE RESULTS</h2>
+        <div class="toolkit-grid">
+            <div class="toolkit-cat editable-text" data-edit-id="toolkit-design"><h3>DESIGN</h3><p>Figma • Photoshop • Canva</p></div>
+            <div class="toolkit-cat editable-text" data-edit-id="toolkit-ecom"><h3>E-COMMERCE</h3><p>Shopify • WooCommerce</p></div>
+            <div class="toolkit-cat editable-text" data-edit-id="toolkit-dev"><h3>DEVELOPMENT</h3><p>Liquid • HTML • CSS • JavaScript</p></div>
+            <div class="toolkit-cat editable-text" data-edit-id="toolkit-marketing"><h3>MARKETING</h3><p>Klaviyo • Meta Ads • Email Automation</p></div>
+            <div class="toolkit-cat editable-text" data-edit-id="toolkit-analytics"><h3>ANALYTICS</h3><p>Google Analytics • Hotjar • Microsoft Clarity</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- WORK SECTION (4 projects) -->
 <section id="work">
     <div class="container">
-        <h2 class="section-title editable-text" data-edit-id="work-title">Sneak peek — signature works</h2>
+        <h2 class="section-title editable-text" data-edit-id="work-main-title">SELECTED WORK</h2>
         <div class="work-grid">
-            <!-- card 1: sleek website mockup -->
-            <div class="work-card">
-                <div class="work-img" style="background: #D9E2DC; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fas fa-laptop-code" style="font-size: 3rem; color: #0F3B2C;"></i>
-                    <span style="font-size: 0.7rem; margin-top: 8px; color: #0F3B2C;">WEBSITE MOCKUP</span>
-                </div>
-                <h3 class="editable-text" data-edit-id="work1-title">Luminary Digital</h3>
-                <p class="editable-text" data-edit-id="work1-desc">High-end e‑commerce & immersive UI for a luxury skincare brand.</p>
+            <div class="work-card editable-text" data-edit-id="project1">
+                <h3>PROJECT 01 Luxury Fashion Store Optimization</h3>
+                <div class="challenge"><strong>THE CHALLENGE:</strong> The store looked visually attractive but struggled with low conversions and weak mobile engagement.</div>
+                <div class="strategy"><strong>THE STRATEGY:</strong> Redesigned the customer journey, optimized trust placement, simplified product discovery, and improved checkout flow psychology.</div>
+                <div class="result"><strong>THE RESULT:</strong> • +41% increase in conversions • Reduced cart abandonment • Increased average order value</div>
             </div>
-            <!-- card 2: branding project / logo design -->
-            <div class="work-card">
-                <div class="work-img" style="background: #E9E2CE; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fas fa-crown" style="font-size: 3rem; color: #D4AF37;"></i>
-                    <span style="font-size: 0.7rem; margin-top: 8px;">BRAND IDENTITY</span>
-                </div>
-                <h3 class="editable-text" data-edit-id="work2-title">Auric Visual Identity</h3>
-                <p class="editable-text" data-edit-id="work2-desc">Full branding suite: logo, packaging, and art direction.</p>
+            <div class="work-card editable-text" data-edit-id="project2">
+                <h3>PROJECT 02 Premium Skincare Brand Repositioning</h3>
+                <div class="challenge"><strong>THE CHALLENGE:</strong> Despite premium products, the brand felt generic and lacked emotional positioning.</div>
+                <div class="strategy"><strong>THE STRATEGY:</strong> Rebuilt the visual identity, improved product presentation, and positioned the brand to feel more luxurious and trustworthy.</div>
+                <div class="result"><strong>THE RESULT:</strong> • Stronger premium perception • Improved customer retention • Higher engagement across product pages</div>
             </div>
-            <!-- card 3: behind-the-scenes collaboration -->
-            <div class="work-card">
-                <div class="work-img" style="background: #CFE3DE; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fas fa-handshake" style="font-size: 3rem; color: #1E2A2A;"></i>
-                    <span style="font-size: 0.7rem;">COLLABORATION</span>
-                </div>
-                <h3 class="editable-text" data-edit-id="work3-title">Creative Direction BTS</h3>
-                <p class="editable-text" data-edit-id="work3-desc">Behind-the-scenes strategy & co-creation with international teams.</p>
+            <div class="work-card editable-text" data-edit-id="project3">
+                <h3>PROJECT 03 Checkout Friction Optimization</h3>
+                <div class="challenge"><strong>THE CHALLENGE:</strong> Customers abandoned checkout before completing purchases.</div>
+                <div class="strategy"><strong>THE STRATEGY:</strong> Introduced cart incentives, optimized checkout communication, and improved upsell positioning.</div>
+                <div class="result"><strong>THE RESULT:</strong> • Reduced checkout abandonment • Increased cart value • Improved conversion flow</div>
+            </div>
+            <div class="work-card editable-text" data-edit-id="project4">
+                <h3>PROJECT 04 Luxury Startup Brand Build</h3>
+                <div class="challenge"><strong>THE CHALLENGE:</strong> A startup needed complete positioning from scratch.</div>
+                <div class="strategy"><strong>THE STRATEGY:</strong> Built the brand identity, storefront structure, premium visuals, and conversion-focused user experience.</div>
+                <div class="result"><strong>THE RESULT:</strong> • Launch-ready premium brand • Stronger trust perception • High-end customer experience</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- REVIEWS section (additional client love) -->
+<!-- REVIEWS + TESTIMONIAL PROOF (Raw proof) -->
 <section id="reviews">
     <div class="container">
-        <h2 class="section-title editable-text" data-edit-id="reviews-title">Client love</h2>
+        <h2 class="section-title editable-text" data-edit-id="reviews-title">WHAT THEY SAY WHEN I LEAVE THE ROOM</h2>
         <div class="reviews-grid">
-            <div class="review-card">
-                <i class="fas fa-quote-left"></i>
-                <div class="review-quote editable-text" data-edit-id="review2">"A masterclass in luxury branding. Primal Lux delivered beyond every expectation — impeccable taste and flawless execution."</div>
-                <div class="review-author editable-text" data-edit-id="review2-author">— Marcus V., CMO, Aurelian Group</div>
-            </div>
-            <div class="review-card">
-                <i class="fas fa-quote-left"></i>
-                <div class="review-quote editable-text" data-edit-id="review3">"Their fusion of forest-green depth and gold accent is pure magic. Our conversion rate doubled after the rebrand."</div>
-                <div class="review-author editable-text" data-edit-id="review3-author">— Elena R., Founder, Lumina Studio</div>
-            </div>
+            <div class="review-item editable-text" data-edit-id="review1">“This completely changed how customers interact with my store.”</div>
+            <div class="review-item editable-text" data-edit-id="review2">“I didn’t realize how many silent issues were killing sales.”</div>
+            <div class="review-item editable-text" data-edit-id="review3">“The store finally feels premium.”</div>
+            <div class="review-item editable-text" data-edit-id="review4">“Best investment we made for our brand.”</div>
+            <div class="review-item editable-text" data-edit-id="review5">“He understands e-commerce deeper than most people we hired before.”</div>
+            <div class="review-item editable-text" data-edit-id="review6">“Every small change he made actually increased results.”</div>
         </div>
+
+        <h3 class="editable-text" data-edit-id="proof-title" style="font-size:1.7rem; margin: 2rem 0 1rem; color:var(--charcoal);">REAL MESSAGES. REAL RESULTS.</h3>
+        <div class="proof-row">
+            <div class="proof-card"><i class="fab fa-slack"></i><div class="editable-text" data-edit-id="proof-slack">Slack: “Conversion rate jumped +27%”</div></div>
+            <div class="proof-card"><i class="fab fa-whatsapp"></i><div class="editable-text" data-edit-id="proof-wa">WhatsApp: “Absolute game-changer 🔥”</div></div>
+            <div class="proof-card"><i class="fab fa-linkedin"></i><div class="editable-text" data-edit-id="proof-li">LinkedIn: “Most thorough strategist”</div></div>
+            <div class="proof-card"><i class="fas fa-envelope"></i><div class="editable-text" data-edit-id="proof-email">Client email: “Our AOV increased 34%”</div></div>
+            <div class="proof-card"><i class="fas fa-video"></i><div class="editable-text" data-edit-id="proof-loom">Loom testimonial: “Brand feels 10x premium”</div></div>
+        </div>
+        <p class="editable-text" data-edit-id="proof-note" style="margin-top:1rem; font-size:0.8rem; color:#6f8a8a;">Raw proof builds more trust than polished testimonials.</p>
     </div>
 </section>
 
-<!-- CONTACT section -->
+<!-- CONTACT SECTION -->
 <section id="contact">
     <div class="container">
-        <h2 class="section-title editable-text" data-edit-id="contact-title">Start your legacy</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Full name" id="contactName">
-            <input type="email" placeholder="Email address" id="contactEmail">
-            <textarea rows="4" placeholder="Tell us about your vision..."></textarea>
-            <button class="btn-primary" style="background: var(--gold); color: #1E2A2A;">Send inquiry <i class="fas fa-paper-plane"></i></button>
-            <p style="margin-top: 1rem; font-size: 0.75rem;"><i class="fas fa-lock"></i> Confidential & premium experience</p>
+        <h2 class="section-title editable-text" data-edit-id="contact-title">LET'S BUILD SOMETHING THAT CONVERTS</h2>
+        <p class="editable-text" data-edit-id="contact-desc" style="margin-bottom:2rem; max-width:700px;">I only take on projects where I know I can create measurable impact. If you're serious about improving your store experience, conversion rate, or brand positioning, fill out the form below and I’ll personally review your project.</p>
+        <div class="contact-flex">
+            <div class="contact-form">
+                <input type="text" placeholder="FULL NAME" id="fullName">
+                <input type="email" placeholder="EMAIL ADDRESS">
+                <input type="text" placeholder="BRAND / STORE NAME">
+                <select>
+                    <option>PROJECT TYPE</option>
+                    <option>Store Optimization</option>
+                    <option>Brand Positioning</option>
+                    <option>Conversion Audit</option>
+                </select>
+                <select>
+                    <option>CURRENT MONTHLY REVENUE</option>
+                    <option>$0 - $10k</option>
+                    <option>$10k - $50k</option>
+                    <option>$50k+</option>
+                </select>
+                <select>
+                    <option>BUDGET RANGE</option>
+                    <option>$500 – $1,000</option>
+                    <option>$1,000 – $3,000</option>
+                    <option>$3,000 – $5,000</option>
+                    <option>$5,000+</option>
+                </select>
+                <textarea rows="3" placeholder="PROJECT DETAILS"></textarea>
+                <button class="btn-primary" style="background:var(--gold); color:var(--charcoal);">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="contact-info">
+                <h3 class="editable-text" data-edit-id="direct-contact" style="margin-bottom:0.5rem;">DIRECT CONTACT</h3>
+                <a href="mailto:hello@primallux.co" class="editable-text" data-edit-id="email-link">📧 hello@primallux.co</a>
+                <div class="editable-text" data-edit-id="socials-label" style="margin:1rem 0 0.5rem; font-weight:600;">SOCIALS</div>
+                <a href="#">LinkedIn</a> <span style="margin:0 6px">|</span> <a href="#">Twitter/X</a> <span style="margin:0 6px">|</span> <a href="#">Instagram</a>
+                <div style="margin-top:1.5rem;">
+                    <a href="#contact" class="btn-primary call-btn" style="background:var(--forest); width:100%; display:inline-block; text-align:center;">📞 BOOK A 15-MINUTE DISCOVERY CALL</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <div class="logo" style="font-size: 1.6rem; margin-bottom: 0.5rem;">PL</div>
-        <p class="editable-text" data-edit-id="footer-text">© 2025 Primal Lux — Where sophistication meets primal creativity.</p>
+        <div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div>
+        <div class="editable-text" data-edit-id="footer-text">Built for brands that want more than just a “nice-looking” store.</div>
+        <p class="editable-text" data-edit-id="copyright">© 2026 Primal Lux. All Rights Reserved.</p>
     </div>
 </footer>
 
 <script>
-    // ---------------- FULLY EDITABLE SYSTEM WITH LOCALSTORAGE ----------------
-    // All elements with data-edit-id become click-to-edit when edit mode is ON
-    // Changes persist through refresh (localStorage) + reset to original
-
+    // -------------------- GLOBAL EDITABLE SYSTEM (click-to-edit, localStorage, reset) --------------------
     const defaultContentMap = new Map();
     let editMode = false;
     const editModeBtn = document.getElementById('editModeBtn');
     const resetBtn = document.getElementById('resetBtn');
 
-    // Save text to localStorage
     function saveToLocalStorage(id, content) {
         let edits = JSON.parse(localStorage.getItem('primalLuxEdits') || '{}');
         edits[id] = content;
         localStorage.setItem('primalLuxEdits', JSON.stringify(edits));
     }
 
-    // Load saved edits from localStorage and apply to DOM
     function loadSavedEdits() {
         const saved = JSON.parse(localStorage.getItem('primalLuxEdits') || '{}');
         for (let [id, value] of Object.entries(saved)) {
             const el = document.querySelector(`[data-edit-id="${id}"]`);
-            if (el && el.innerText !== value) {
-                el.innerText = value;
-            }
+            if (el && el.innerText !== value) el.innerText = value;
         }
     }
 
-    // Reset all content to original defaults
     function resetToDefault() {
-        if (confirm('⚠️ Reset all custom text? Your edited content will be lost.')) {
+        if (confirm('⚠️ Reset all custom text to original content? Your edits will be lost.')) {
             localStorage.removeItem('primalLuxEdits');
             for (let [id, defaultText] of defaultContentMap.entries()) {
                 const el = document.querySelector(`[data-edit-id="${id}"]`);
                 if (el) el.innerText = defaultText;
             }
-            // show temporary notification
             const toast = document.createElement('div');
-            toast.innerText = '✨ Reset to original premium content ✨';
-            toast.style.position = 'fixed';
-            toast.style.bottom = '20px';
-            toast.style.right = '20px';
-            toast.style.backgroundColor = '#0F3B2C';
-            toast.style.color = '#F5E17A';
-            toast.style.padding = '10px 20px';
-            toast.style.borderRadius = '40px';
-            toast.style.fontWeight = '600';
-            toast.style.zIndex = '999';
-            toast.style.fontSize = '0.85rem';
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2200);
+            toast.innerText = '✨ Reset to original content ✨';
+            toast.style.position = 'fixed'; toast.style.bottom = '20px'; toast.style.right = '20px';
+            toast.style.background = '#0F3B2C'; toast.style.color = '#F2E2B0'; toast.style.padding = '10px 18px';
+            toast.style.borderRadius = '40px'; toast.style.fontSize = '0.8rem'; toast.style.zIndex = '999';
+            document.body.appendChild(toast); setTimeout(() => toast.remove(), 2000);
         }
     }
 
-    // Initialize registry: gather all editable texts and store defaults
     function initEditableRegistry() {
         const elements = document.querySelectorAll('[data-edit-id]');
         elements.forEach(el => {
             const id = el.getAttribute('data-edit-id');
-            if (!defaultContentMap.has(id)) {
-                defaultContentMap.set(id, el.innerText);
-            }
-            // blur event for auto-saving (when contenteditable)
-            el.addEventListener('blur', function() {
+            if (!defaultContentMap.has(id)) defaultContentMap.set(id, el.innerText);
+            el.addEventListener('blur', () => {
                 if (editMode && el.isContentEditable) {
-                    const newValue = el.innerText;
+                    const newVal = el.innerText;
                     const saved = JSON.parse(localStorage.getItem('primalLuxEdits') || '{}');
-                    if (saved[id] !== newValue) {
-                        saveToLocalStorage(id, newValue);
-                        // quick visual feedback
-                        const originalBg = el.style.backgroundColor;
-                        el.style.backgroundColor = 'rgba(212,175,55,0.25)';
-                        setTimeout(() => { el.style.backgroundColor = ''; }, 200);
-                    }
+                    if (saved[id] !== newVal) saveToLocalStorage(id, newVal);
                 }
             });
         });
     }
 
-    // Enable / disable edit mode (contenteditable)
     function setEditMode(active) {
         editMode = active;
-        const allEditables = document.querySelectorAll('[data-edit-id]');
+        const allEditable = document.querySelectorAll('[data-edit-id]');
         if (active) {
-            allEditables.forEach(el => {
-                el.setAttribute('contenteditable', 'true');
-                el.setAttribute('spellcheck', 'false');
-            });
+            allEditable.forEach(el => { el.setAttribute('contenteditable', 'true'); el.setAttribute('spellcheck', 'false'); });
             document.body.classList.add('edit-mode-active');
             editModeBtn.classList.add('active');
             editModeBtn.innerHTML = '<i class="fas fa-check-circle"></i> Edit ON';
-            // first-time tip
-            if (!window.editTipShown) {
-                const tip = document.createElement('div');
-                tip.innerText = '✏️ Tip: Click any text (headlines, quotes, footer) → edit → changes save automatically after blur!';
-                tip.style.position = 'fixed';
-                tip.style.bottom = '80px';
-                tip.style.right = '20px';
-                tip.style.backgroundColor = '#1E2A2A';
-                tip.style.color = '#D4AF37';
-                tip.style.padding = '10px 18px';
-                tip.style.borderRadius = '32px';
-                tip.style.fontSize = '0.75rem';
-                tip.style.border = '1px solid #D4AF37';
-                tip.style.zIndex = '1000';
-                document.body.appendChild(tip);
-                setTimeout(() => tip.remove(), 5000);
-                window.editTipShown = true;
-            }
         } else {
-            allEditables.forEach(el => {
-                el.setAttribute('contenteditable', 'false');
-            });
+            allEditable.forEach(el => el.setAttribute('contenteditable', 'false'));
             document.body.classList.remove('edit-mode-active');
             editModeBtn.classList.remove('active');
             editModeBtn.innerHTML = '<i class="fas fa-pen-fancy"></i> Edit Mode';
         }
     }
 
-    // smooth scroll for nav links
-    function initSmoothScroll() {
+    function bootstrap() {
+        initEditableRegistry();
+        loadSavedEdits();
+        setEditMode(false);
+        editModeBtn.addEventListener('click', () => setEditMode(!editMode));
+        resetBtn.addEventListener('click', resetToDefault);
+        // smooth nav
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     }
-
-    // page load bootstrap
-    function bootstrap() {
-        initEditableRegistry();
-        loadSavedEdits();      // apply previously saved edits
-        setEditMode(false);    // start with edit mode off
-
-        // Button events
-        editModeBtn.addEventListener('click', () => setEditMode(!editMode));
-        resetBtn.addEventListener('click', resetToDefault);
-        initSmoothScroll();
-
-        // extra: manual fix for hero image placeholder if needed (already fine)
-        // Also ensure floating card quote matches exactly spec.
-    }
-
     window.addEventListener('DOMContentLoaded', bootstrap);
 </script>
-
-<!-- additional note: left side photo, office environment accents via background and gold elements -->
 </body>
 </html>
