@@ -1,1 +1,70 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primal Lux – About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; --gray-bg:#F5F6F2; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-light); }
+        .logo { font-size:1.8rem; font-weight:800; background:linear-gradient(135deg, var(--forest), var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none; }
+        .nav-links { display:flex; gap:2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; transition:0.2s; }
+        .nav-links a:hover { color:var(--gold); }
+        .section-title { font-size:2rem; font-weight:700; margin-bottom:2rem; color:var(--charcoal); position:relative; }
+        .section-title:after { content:''; position:absolute; bottom:-12px; left:0; width:70px; height:3px; background:var(--gold); }
+        .about-main { line-height:1.6; margin-bottom:2rem; }
+        .timeline-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; margin-top:2rem; }
+        .timeline-card { background:white; border-radius:20px; padding:1.5rem; border:1px solid var(--border-light); }
+        .timeline-card h3 { color:var(--gold); font-size:1.2rem; margin-bottom:0.75rem; }
+        .timeline-card ul { list-style:none; padding-left:0; }
+        .timeline-card li { font-size:0.85rem; margin-bottom:0.4rem; color:#2b4747; }
+        footer { padding:2.5rem 0; text-align:center; color:#6B7B7B; font-size:0.8rem; }
+        @media (max-width:780px) { .container { padding:0 1.2rem; } .navbar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">PRIMAL LUX</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+<section>
+    <div class="container">
+        <h2 class="section-title">ABOUT PRIMAL LUX</h2>
+        <div class="about-main">
+            Most freelancers learn tools.<br> I learned behavior.<br><br>
+            Over the last 5 years, I've spent countless hours studying why customers buy, why stores fail silently, and why some brands feel premium before you even check the price.<br>
+            Primal Lux was built from that understanding.<br><br>
+            “Primal” represents instinct — the raw psychology behind attention, trust, emotion, urgency, and buying decisions.<br>
+            “Lux” represents execution — clean design, premium presentation, smooth customer experience, and polished strategy.<br><br>
+            Together, they create stores that don’t just look good. They convert.<br><br>
+            What started as simple Shopify customization evolved into deep e-commerce problem solving: fixing conversion leaks, improving mobile experiences, reducing checkout friction, and helping brands stop losing revenue from invisible mistakes.<br>
+            Today, every project is approached with one belief:<br>
+            <strong>Small details create massive differences in revenue.</strong>
+        </div>
+        <h3 style="font-size:1.6rem; margin:2rem 0 1rem; color:var(--forest);">EXPERIENCE TIMELINE</h3>
+        <div class="timeline-grid">
+            <div class="timeline-card"><h3>YEAR 1 — FOUNDATION</h3><ul><li>• Shopify customization</li><li>• Brand fundamentals</li><li>• Customer psychology</li><li>• Store structure optimization</li></ul></div>
+            <div class="timeline-card"><h3>YEAR 2 — CONVERSION FOCUS</h3><ul><li>• Product page optimization</li><li>• Mobile-first experiences</li><li>• Checkout flow improvements</li><li>• User behavior analysis</li></ul></div>
+            <div class="timeline-card"><h3>YEAR 3 — BRAND POSITIONING</h3><ul><li>• Premium brand systems</li><li>• High-ticket presentation</li><li>• Visual hierarchy</li><li>• Trust optimization</li></ul></div>
+            <div class="timeline-card"><h3>YEAR 4 — STRATEGY & EXECUTION</h3><ul><li>• Full conversion audits</li><li>• Revenue-focused redesigns</li><li>• Scaling systems</li><li>• Customer retention improvements</li></ul></div>
+            <div class="timeline-card"><h3>YEAR 5 — PRIMAL LUX</h3><ul><li>• Premium e-commerce positioning</li><li>• Conversion psychology</li><li>• Luxury brand execution</li><li>• High-performance storefront systems</li></ul></div>
+        </div>
+    </div>
+</section>
+<footer><div class="container"><div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div><div>Built for brands that want more than just a “nice-looking” store.</div><p>© 2026 Primal Lux. All Rights Reserved.</p></div></footer>
+</body>
+</html>
