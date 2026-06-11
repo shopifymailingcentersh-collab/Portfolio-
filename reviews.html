@@ -1,1 +1,67 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primal Lux – Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; --gray-bg:#F5F6F2; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-light); }
+        .logo { font-size:1.8rem; font-weight:800; background:linear-gradient(135deg, var(--forest), var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none; }
+        .nav-links { display:flex; gap:2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; transition:0.2s; }
+        .nav-links a:hover { color:var(--gold); }
+        .section-title { font-size:2rem; font-weight:700; margin-bottom:2rem; color:var(--charcoal); position:relative; }
+        .section-title:after { content:''; position:absolute; bottom:-12px; left:0; width:70px; height:3px; background:var(--gold); }
+        .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; margin-bottom:3rem; }
+        .review-item { background:var(--gray-bg); padding:1.5rem; border-radius:24px; font-style:italic; }
+        .proof-row { display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1.5rem; }
+        .proof-card { background:white; border-radius:20px; padding:1rem; flex:1; min-width:150px; text-align:center; border:1px solid #EAE6DA; }
+        .proof-card i { font-size:2rem; color:var(--gold); margin-bottom:0.5rem; }
+        footer { padding:2.5rem 0; text-align:center; color:#6B7B7B; font-size:0.8rem; }
+        @media (max-width:780px) { .container { padding:0 1.2rem; } .navbar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">PRIMAL LUX</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+<section>
+    <div class="container">
+        <h2 class="section-title">WHAT THEY SAY WHEN I LEAVE THE ROOM</h2>
+        <div class="reviews-grid">
+            <div class="review-item">“This completely changed how customers interact with my store.”</div>
+            <div class="review-item">“I didn’t realize how many silent issues were killing sales.”</div>
+            <div class="review-item">“The store finally feels premium.”</div>
+            <div class="review-item">“Best investment we made for our brand.”</div>
+            <div class="review-item">“He understands e-commerce deeper than most people we hired before.”</div>
+            <div class="review-item">“Every small change he made actually increased results.”</div>
+        </div>
+        <h3 style="font-size:1.7rem; margin:2rem 0 1rem; color:var(--charcoal);">REAL MESSAGES. REAL RESULTS.</h3>
+        <div class="proof-row">
+            <div class="proof-card"><i class="fab fa-slack"></i><div>Slack: “Conversion rate jumped +27%”</div></div>
+            <div class="proof-card"><i class="fab fa-whatsapp"></i><div>WhatsApp: “Absolute game-changer 🔥”</div></div>
+            <div class="proof-card"><i class="fab fa-linkedin"></i><div>LinkedIn: “Most thorough strategist”</div></div>
+            <div class="proof-card"><i class="fas fa-envelope"></i><div>Client email: “Our AOV increased 34%”</div></div>
+            <div class="proof-card"><i class="fas fa-video"></i><div>Loom testimonial: “Brand feels 10x premium”</div></div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.8rem; color:#6f8a8a;">Raw proof builds more trust than polished testimonials.</p>
+    </div>
+</section>
+<footer><div class="container"><div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div><div>Built for brands that want more than just a “nice-looking” store.</div><p>© 2026 Primal Lux. All Rights Reserved.</p></div></footer>
+</body>
+</html>
