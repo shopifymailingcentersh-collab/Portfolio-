@@ -1,1 +1,80 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primal Lux – Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-light); }
+        .logo { font-size:1.8rem; font-weight:800; background:linear-gradient(135deg, var(--forest), var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none; }
+        .nav-links { display:flex; gap:2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; transition:0.2s; }
+        .nav-links a:hover { color:var(--gold); }
+        .btn-primary { background:var(--forest); color:white; padding:0.8rem 1.8rem; border-radius:40px; font-weight:600; text-decoration:none; transition:0.2s; display:inline-block; border:none; cursor:pointer; }
+        .btn-primary:hover { background:#1C553F; transform:translateY(-2px); }
+        .section-title { font-size:2rem; font-weight:700; margin-bottom:2rem; color:var(--charcoal); position:relative; }
+        .section-title:after { content:''; position:absolute; bottom:-12px; left:0; width:70px; height:3px; background:var(--gold); }
+        .contact-flex { display:flex; flex-wrap:wrap; gap:3rem; margin-top:2rem; }
+        .contact-form { flex:2; }
+        .contact-info { flex:1; }
+        input, select, textarea { width:100%; padding:0.9rem; margin-bottom:1rem; border:1px solid var(--border-light); border-radius:16px; background:white; font-family:inherit; }
+        .contact-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--forest); color:white; padding:0.7rem 1.2rem; border-radius:40px; font-weight:600; text-decoration:none; transition:0.2s; font-size:0.85rem; width:fit-content; margin-bottom:0.8rem; }
+        .contact-btn.outline-gold { background:transparent; border:1px solid var(--gold); color:var(--charcoal); }
+        .contact-btn.outline-gold:hover { background:var(--gold); color:var(--matte-black); }
+        .whatsapp-btn { background:#25D366; }
+        .whatsapp-btn:hover { background:#20b859; }
+        .call-btn { background:var(--gold); color:var(--charcoal); width:100%; justify-content:center; }
+        footer { padding:2.5rem 0; text-align:center; color:#6B7B7B; font-size:0.8rem; }
+        @media (max-width:780px) { .container { padding:0 1.2rem; } .navbar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">PRIMAL LUX</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+<section>
+    <div class="container">
+        <h2 class="section-title">LET'S BUILD SOMETHING THAT CONVERTS</h2>
+        <p style="margin-bottom:2rem; max-width:700px;">I only take on projects where I know I can create measurable impact. If you're serious about improving your store experience, conversion rate, or brand positioning, fill out the form below and I’ll personally review your project.</p>
+        <div class="contact-flex">
+            <div class="contact-form">
+                <input type="text" placeholder="FULL NAME">
+                <input type="email" placeholder="EMAIL ADDRESS">
+                <input type="text" placeholder="BRAND / STORE NAME">
+                <select><option>PROJECT TYPE</option><option>Store Optimization</option><option>Brand Positioning</option><option>Conversion Audit</option></select>
+                <select><option>CURRENT MONTHLY REVENUE</option><option>$0 - $10k</option><option>$10k - $50k</option><option>$50k+</option></select>
+                <select><option>BUDGET RANGE</option><option>$500 – $1,000</option><option>$1,000 – $3,000</option><option>$3,000 – $5,000</option><option>$5,000+</option></select>
+                <textarea rows="3" placeholder="PROJECT DETAILS"></textarea>
+                <button class="btn-primary">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="contact-info">
+                <h3 style="margin-bottom:0.5rem;">DIRECT CONTACT</h3>
+                <a href="mailto:primaluxecommerce@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> primaluxecommerce@gmail.com</a>
+                <a href="https://www.linkedin.com/in/abolade-bayonle-455846415" target="_blank" class="contact-btn outline-gold"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn" style="background:var(--gold); color:var(--charcoal);"><i class="fas fa-calendar-check"></i> Schedule a call</a>
+                <a href="https://wa.link/ugoqd7" target="_blank" class="contact-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <div style="margin-top:1.5rem;">
+                    <a href="https://calendly.com/oliverkingdev/30min" target="_blank" class="contact-btn call-btn">📞 BOOK A 15-MINUTE DISCOVERY CALL</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer><div class="container"><div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div><div>Built for brands that want more than just a “nice-looking” store.</div><p>© 2026 Primal Lux. All Rights Reserved.</p></div></footer>
+</body>
+</html>
