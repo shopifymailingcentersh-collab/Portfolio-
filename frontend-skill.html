@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Frontend & UI/UX Skills – Primal Lux</title>
+    <title>Frontend Skills – Primal Lux</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -20,18 +20,20 @@
         
         .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
         .page-header h1 { font-size:2rem; margin-bottom:0.5rem; }
+        .page-header p { opacity:0.9; }
         
         .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
-        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.1s; }
-        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.2s; cursor:pointer; text-decoration:none; display:block; color:inherit; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; transform:translateX(4px); }
         .skill-card h3 { font-size:1rem; color:var(--forest); display:flex; align-items:center; gap:8px; }
         .skill-card h3 i { color:var(--gold); }
+        .skill-card p { font-size:0.75rem; color:#5A6E6E; margin-top:0.3rem; }
         
         .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
         footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
         
         @media (min-width:768px) {
-            .skills-grid { grid-template-columns:repeat(2,1fr); }
+            .skills-grid { grid-template-columns:repeat(2,1fr); gap:1.2rem; }
             .logo-img { height:50px; }
         }
         @media (min-width:1024px) {
@@ -59,11 +61,11 @@
 </div>
 
 <div class="container">
-    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Work</a>
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Categories</a>
     
     <div class="page-header">
-        <h1><i class="fas fa-code"></i> Frontend & UI/UX Solutions</h1>
-        <p>Responsive design, liquid development, animations, accessibility — everything your customers see and interact with.</p>
+        <h1><i class="fas fa-code"></i> Frontend & UI/UX Skills</h1>
+        <p>Click any skill below to get a price quote and connect with a developer</p>
     </div>
     
     <div class="skills-grid" id="skillsGrid"></div>
@@ -72,7 +74,7 @@
 <footer>
     <div class="container">
         <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
-        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <div>Built for brands that want more than just a "nice-looking" store.</div>
         <p>© 2026 Primal Lux. All Rights Reserved.</p>
     </div>
 </footer>
@@ -85,10 +87,10 @@
         "Form validation & UX", "Checkout customizations", "Trust badge placement optimization", "Progress indicators design",
         "Skeleton screens implementation", "Loading state animations", "Toast notifications design", "Tooltip & popover components",
         "Accordion & tab components", "Dropdown menu optimization", "Search autocomplete enhancement", "Filter & sort UI improvements",
-        "Product swatch customization (color, size)", "Variant selector improvements", "Quantity picker redesign", "Add-to-cart button optimization",
+        "Product swatch customization", "Variant selector improvements", "Quantity picker redesign", "Add-to-cart button optimization",
         "Sticky header implementation", "Back-to-top button design", "Breadcrumb navigation", "Footer organization & design",
         "404 page customization", "Password page design", "Coming soon page development", "Landing page builder integration",
-        "Page speed optimization (frontend)", "Core Web Vitals improvement (LCP, FID, CLS)", "Font loading optimization", "Critical CSS inlining",
+        "Page speed optimization (frontend)", "Core Web Vitals improvement", "Font loading optimization", "Critical CSS inlining",
         "Image lazy loading native", "Responsive image sizes (srcset)", "WebP fallback handling", "Cross-browser compatibility testing",
         "Mobile touch optimization", "Gesture support (swipe, pinch)", "Click/tap target sizing", "Viewport meta configuration",
         "Accessibility compliance (WCAG 2.1)", "ARIA labels implementation", "Keyboard navigation support", "Screen reader optimization",
@@ -98,25 +100,27 @@
         "Cookie consent banner design", "Age verification modal", "Currency switcher UI", "Language selector design",
         "Store locator map integration", "Product comparison UI", "Wishlist functionality", "Recently viewed products widget",
         "Related products carousel", "Upsell/cross-sell display", "Bundled products showcase", "Limited stock indicators",
-        "Countdown timer design", "Sales badge styling", "Product review display (stars, comments)", "Q&A section design",
+        "Countdown timer design", "Sales badge styling", "Product review display", "Q&A section design",
         "User account dashboard UI", "Order tracking interface", "Returns portal design", "Address book management UI",
         "Payment method icons styling", "Shipping calculator frontend", "Estimated delivery date display", "Loyalty points indicator",
         "Referral program widget", "Affiliate dashboard UI", "Blog post card design", "Article pagination styling",
         "Comment section design", "Author bio box styling", "Category page optimization", "Collection page grid/List toggle",
-        "Pagination styling (numbered, load more)", "Sort by dropdown enhancement", "Active filters display", "Clear filters button",
+        "Pagination styling", "Sort by dropdown enhancement", "Active filters display", "Clear filters button",
         "Product card hover effects", "Sale/New badge positioning", "Price display formatting", "Unit price display",
         "Inventory level indicator", "Low stock warning badge", "Pre-order button styling", "Back-in-stock notification trigger"
     ];
     
+    // Ensure we have at least 100 items
     while(frontendSkills.length < 102) {
-        frontendSkills.push("Custom icon system design", "SVG animation implementation", "Scroll-triggered animations", "Parallax effect setup");
+        frontendSkills.push("Custom icon system design", "SVG animation implementation", "Scroll-triggered animations");
     }
     
     const grid = document.getElementById('skillsGrid');
     frontendSkills.forEach(skill => {
-        const card = document.createElement('div');
+        const card = document.createElement('a');
         card.className = 'skill-card';
-        card.innerHTML = `<h3><i class="fas fa-paint-brush"></i> ${skill}</h3><p>Premium frontend implementation available</p>`;
+        card.href = `skill-detail.html?skill=${encodeURIComponent(skill)}&category=frontend`;
+        card.innerHTML = `<h3><i class="fas fa-paint-brush"></i> ${skill}</h3><p>💰 Click to get price estimate ($100 - $500) →</p>`;
         grid.appendChild(card);
     });
 </script>
