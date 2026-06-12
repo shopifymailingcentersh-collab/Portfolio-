@@ -28,8 +28,16 @@
         .section-title { font-size:1.8rem; font-weight:700; margin:2rem 0 1.5rem; color:var(--charcoal); position:relative; display:inline-block; }
         .section-title:after { content:''; position:absolute; bottom:-10px; left:0; width:60px; height:3px; background:var(--gold); }
         
-        /* Category Cards Grid */
-        .categories-grid { display:grid; grid-template-columns:1fr; gap:1.8rem; margin:2rem 0 3rem; }
+        /* Category Cards Grid - now 2 columns */
+        .categories-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 1.8rem; 
+            margin: 2rem 0 3rem; 
+            max-width: 900px; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
         .category-card { background:white; border-radius:32px; padding:2rem; border:1px solid var(--border-light); transition:all 0.2s; cursor:pointer; text-decoration:none; color:inherit; display:block; }
         .category-card:hover { transform:translateY(-6px); box-shadow:0 20px 35px -12px rgba(0,0,0,0.12); border-color:var(--gold); }
         .category-icon { font-size:2.8rem; color:var(--gold); margin-bottom:1rem; }
@@ -42,7 +50,11 @@
         
         @media (min-width:768px) {
             .container { padding:0 2rem; }
-            .categories-grid { grid-template-columns:repeat(3,1fr); gap:2rem; }
+            .categories-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 2rem;
+                max-width: 900px;
+            }
             .logo-img { height:50px; }
         }
         @media (max-width:480px) {
@@ -76,7 +88,7 @@
     <div class="video-caption">🎬 Watch how we transform e-commerce brands — from invisible issues to premium performance</div>
 </div>
 
-<!-- Categories Section -->
+<!-- Categories Section - Only Backend and Store Improvements -->
 <div class="container">
     <h2 class="section-title">What We Solve</h2>
     <div class="categories-grid">
@@ -84,12 +96,6 @@
             <div class="category-icon"><i class="fas fa-server"></i></div>
             <h3>🔧 Backend & Technical</h3>
             <p>Server configuration, databases, APIs, security, performance, and infrastructure optimization.</p>
-            <span class="category-stats">100+ skills & solutions</span>
-        </a>
-        <a href="frontend-skills.html" class="category-card">
-            <div class="category-icon"><i class="fas fa-code"></i></div>
-            <h3>🎨 Frontend & UI/UX</h3>
-            <p>Responsive design, liquid development, animations, accessibility, and conversion-focused interfaces.</p>
             <span class="category-stats">100+ skills & solutions</span>
         </a>
         <a href="store-skills.html" class="category-card">
@@ -104,7 +110,7 @@
 <footer>
     <div class="container">
         <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
-        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <div>Built for brands that want more than just a "nice-looking" store.</div>
         <p>© 2026 Primal Lux. All Rights Reserved.</p>
     </div>
 </footer>
