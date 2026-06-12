@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Backend & Technical Skills – Primal Lux</title>
+    <title>Backend Skills – Primal Lux</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -23,15 +23,13 @@
         .page-header p { opacity:0.9; }
         
         .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
-        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.1s; }
-        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; }
-        .skill-card h3 { font-size:1rem; color:var(--forest); margin-bottom:0.3rem; display:flex; align-items:center; gap:8px; }
-        .skill-card h3 i { color:var(--gold); font-size:0.9rem; }
-        .skill-card p { font-size:0.8rem; color:#5A6E6E; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.2s; cursor:pointer; text-decoration:none; display:block; color:inherit; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; transform:translateX(4px); }
+        .skill-card h3 { font-size:1rem; color:var(--forest); display:flex; align-items:center; gap:8px; }
+        .skill-card h3 i { color:var(--gold); }
+        .skill-card p { font-size:0.75rem; color:#5A6E6E; margin-top:0.3rem; }
         
         .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
-        .back-link:hover { color:var(--gold); }
-        
         footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
         
         @media (min-width:768px) {
@@ -63,11 +61,11 @@
 </div>
 
 <div class="container">
-    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Work</a>
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Categories</a>
     
     <div class="page-header">
-        <h1><i class="fas fa-server"></i> Backend & Technical Solutions</h1>
-        <p>Server configuration, databases, APIs, security, performance — everything that runs your store behind the scenes.</p>
+        <h1><i class="fas fa-server"></i> Backend & Technical Skills</h1>
+        <p>Click any skill below to get a price quote ($120 - $500) and connect with a developer</p>
     </div>
     
     <div class="skills-grid" id="skillsGrid"></div>
@@ -76,7 +74,7 @@
 <footer>
     <div class="container">
         <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
-        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <div>Built for brands that want more than just a "nice-looking" store.</div>
         <p>© 2026 Primal Lux. All Rights Reserved.</p>
     </div>
 </footer>
@@ -85,7 +83,7 @@
     const backendSkills = [
         "Database optimization & indexing", "Server response time reduction", "API integration & custom endpoints", "Webhook configuration & debugging",
         "SSL certificate setup & renewal", "Load balancing & scaling", "Caching strategies (Redis, Memcached)", "CDN configuration & optimization",
-        "Backup automation & disaster recovery", "Payment gateway integration (Stripe, PayPal, Shopify Payments)", "Inventory sync across channels",
+        "Backup automation & disaster recovery", "Payment gateway integration (Stripe, PayPal)", "Inventory sync across channels",
         "Order management system optimization", "Shipping API integration (ShipStation, EasyPost)", "Tax calculation engine setup",
         "Customer account system customization", "Authentication & authorization flows", "Rate limiting & DDoS protection", "Firewall configuration",
         "Malware scanning & removal", "PCI compliance implementation", "GDPR/CCPA compliance tools", "Cookie consent management",
@@ -110,19 +108,16 @@
         "Downloadable product security", "License key management", "Membership access control", "Role-based permission systems",
         "Audit logging & compliance tracking", "Data anonymization tools", "Encryption implementation (AES-256)", "Secure file upload handling",
         "CSRF/XSS protection hardening", "SQL injection prevention", "Session management security", "Two-factor authentication setup",
-        "OAuth integration (Google, Facebook, Apple)", "SAML/SSO configuration", "JWT implementation", "API rate limiting strategies"
+        "OAuth integration (Google, Facebook, Apple)", "SAML/SSO configuration", "JWT implementation", "API rate limiting strategies",
+        "GraphQL API optimization", "REST API versioning", "WebSocket implementation", "Serverless function deployment"
     ];
-    
-    // Ensure we have at least 100 items
-    while(backendSkills.length < 105) {
-        backendSkills.push("Additional security hardening", "Performance audit & fix", "Custom backend automation", "Legacy system migration", "Infrastructure documentation");
-    }
     
     const grid = document.getElementById('skillsGrid');
     backendSkills.forEach(skill => {
-        const card = document.createElement('div');
+        const card = document.createElement('a');
         card.className = 'skill-card';
-        card.innerHTML = `<h3><i class="fas fa-cog"></i> ${skill}</h3><p>Expert solution & implementation available</p>`;
+        card.href = `skill-detail-backend.html?skill=${encodeURIComponent(skill)}&category=backend`;
+        card.innerHTML = `<h3><i class="fas fa-cog"></i> ${skill}</h3><p>💰 Price: $120 - $500 • Click to solve →</p>`;
         grid.appendChild(card);
     });
 </script>
