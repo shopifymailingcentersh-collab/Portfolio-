@@ -2,67 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Primal Lux – Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
-        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
-        .container { max-width:1280px; margin:0 auto; padding:0 2rem; position:relative; z-index:2; }
-        
-        /* --- Updated Logo Styles --- */
-        .navbar { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 1.2rem 0; 
-            flex-wrap: wrap; 
-            gap: 1rem; 
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            background: rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 80px;
-            margin-top: 1rem;
-            padding: 0.8rem 2rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FCFCF8;
+            color: #1A2A2A;
+            line-height: 1.5;
+        }
+
+        :root {
+            --charcoal: #1E2F2F;
+            --forest: #0F3B2C;
+            --gold: #D4AF37;
+            --gold-light: #F5E17A;
+            --border-light: #E8EBE4;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Navigation (mobile-first) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 60px;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         .logo-img {
-            height: 50px;
+            height: 40px;
             width: auto;
             display: block;
             filter: brightness(0) invert(1);
         }
-        /* Ensure logo works on all backgrounds */
-        .nav-links { display:flex; gap:2rem; flex-wrap:wrap; }
-        .nav-links a { color:white; text-decoration:none; font-weight:500; transition:0.2s; text-shadow:0 1px 2px rgba(0,0,0,0.3); }
-        .nav-links a:hover { color:var(--gold); }
-        
-        /* --- Updated Button Styles for better visibility --- */
-        .btn-primary, .btn-outline { 
-            display:inline-block; 
-            padding:0.8rem 1.8rem; 
-            border-radius:40px; 
-            font-weight:600; 
-            text-decoration:none; 
-            transition:0.2s; 
-            font-size:0.9rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .btn-primary { background:var(--gold); color:var(--charcoal); border:none; }
-        .btn-primary:hover { background:#F5E17A; transform:translateY(-2px); }
-        .btn-outline { border:1.5px solid white; color:white; background:rgba(0,0,0,0.4); backdrop-filter:blur(4px); }
-        .btn-outline:hover { background:white; color:var(--forest); border-color:white; }
-        
-        /* Hero section with video background */
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* --- Hero Section with Video Background --- */
         .hero-section {
             position: relative;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             overflow: hidden;
-            margin-bottom: 0;
+            margin-top: -80px; /* Pull navbar up so video fills top */
+            padding-top: 80px;
         }
+
         .hero-video {
             position: absolute;
             top: 0;
@@ -72,110 +99,309 @@
             object-fit: cover;
             z-index: 0;
         }
+
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15,59,44,0.85), rgba(30,47,47,0.75));
+            background: linear-gradient(135deg, rgba(15, 59, 44, 0.85), rgba(30, 47, 47, 0.8));
             z-index: 1;
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
-            padding: 5rem 0;
+            padding: 4rem 0 5rem;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 100%;
         }
-        .hero-badge { 
-            font-size:0.9rem; 
-            letter-spacing:3px; 
-            color:var(--gold); 
-            font-weight:600; 
-            margin-bottom:1rem; 
-            background: rgba(0,0,0,0.3);
+
+        .hero-badge {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.4);
             display: inline-block;
-            padding: 0.2rem 1rem;
+            padding: 0.3rem 1rem;
             border-radius: 40px;
             backdrop-filter: blur(4px);
         }
-        h1 { 
-            font-size:4rem; 
-            font-weight:800; 
-            line-height:1.2; 
-            margin-bottom:0.75rem; 
-            color:white; 
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
-        .hero-subhead { 
-            font-size:1.6rem; 
-            font-weight:600; 
-            color:var(--gold-light); 
-            margin-bottom:1.25rem; 
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+        .hero-subhead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        .hero-desc { 
-            font-size:1.1rem; 
-            max-width:600px; 
-            margin-bottom:2rem; 
-            color:#f0f0f0; 
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            line-height: 1.6;
+
+        .hero-desc {
+            font-size: 1rem;
+            max-width: 550px;
+            margin: 0 auto 1.8rem;
+            color: #f0f0f0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+            padding: 0 0.5rem;
         }
-        .hero-buttons { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
-        .trusted-badge { 
-            font-size:0.9rem; 
-            color:#eee; 
-            border-top:1px solid rgba(255,255,255,0.3); 
-            padding-top:1.5rem; 
-            display:inline-block;
-            background: rgba(0,0,0,0.2);
-            padding: 0.8rem 1.5rem;
-            border-radius: 60px;
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary, .btn-outline {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--charcoal);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #F5E17A;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1.5px solid white;
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(4px);
         }
-        
-        /* --- Team Section Styles (Unchanged) --- */
-        section { padding:5rem 0; border-bottom:1px solid var(--border-light); background:white; }
-        .section-title { font-size:2rem; font-weight:700; margin-bottom:2rem; color:var(--charcoal); position:relative; }
-        .section-title:after { content:''; position:absolute; bottom:-12px; left:0; width:70px; height:3px; background:var(--gold); }
-        .team-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:1rem; }
-        .team-card { background:white; border-radius:28px; padding:1.8rem; border:1px solid var(--border-light); transition:all 0.2s; text-align:center; cursor:pointer; }
-        .team-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px -12px rgba(0,0,0,0.1); border-color:var(--gold); }
-        .team-card i { font-size:2.8rem; color:var(--gold); margin-bottom:1rem; }
-        .team-card h3 { font-size:1.3rem; margin-bottom:0.3rem; color:var(--charcoal); }
-        .team-card .role { font-weight:600; color:var(--forest); margin-bottom:0.5rem; font-size:0.85rem; }
-        .team-card .bio { font-size:0.85rem; color:#5A6E6E; margin-bottom:0.8rem; }
-        .team-card .specialty { font-size:0.75rem; color:var(--gold); background:#FCF8E8; display:inline-block; padding:0.2rem 0.8rem; border-radius:20px; }
-        .hire-btn { margin-top:1rem; background:var(--gold); color:var(--charcoal); border:none; padding:0.4rem 1rem; border-radius:30px; font-weight:600; font-size:0.8rem; cursor:pointer; display:inline-block; text-decoration:none; }
-        footer { padding:2.5rem 0; text-align:center; color:#6B7B7B; font-size:0.8rem; background:white; }
-        
-        @media (max-width:780px) { 
-            .container { padding:0 1.2rem; } 
-            h1 { font-size:2.4rem; } 
-            .navbar { flex-direction:column; align-items:center; padding:1rem; margin-top:0.5rem; }
-            .nav-links { margin-top:0.5rem; gap:1.2rem; }
-            .hero-section { min-height: 70vh; }
-            .hero-subhead { font-size:1.2rem; }
-            .hero-desc { font-size:1rem; }
-            .trusted-badge { font-size:0.7rem; }
-            .logo-img { height: 40px; }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--forest);
+            border-color: white;
+        }
+
+        .trusted-badge {
+            font-size: 0.75rem;
+            color: #eee;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            margin-top: 0.5rem;
+        }
+
+        /* --- Team Section --- */
+        section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: var(--charcoal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+            border-color: var(--gold);
+        }
+
+        .team-card i {
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            color: var(--charcoal);
+        }
+
+        .team-card .role {
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .team-card .bio {
+            font-size: 0.8rem;
+            color: #5A6E6E;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .team-card .specialty {
+            font-size: 0.7rem;
+            color: var(--gold);
+            background: #FCF8E8;
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+        }
+
+        .hire-btn {
+            margin-top: 0.8rem;
+            background: var(--gold);
+            color: var(--charcoal);
+            border: none;
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #6B7B7B;
+            font-size: 0.75rem;
+            background: white;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* --- Tablet and Desktop improvements --- */
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 2rem;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            .hero-subhead {
+                font-size: 1.5rem;
+            }
+            .hero-desc {
+                font-size: 1.05rem;
+            }
+            .logo-img {
+                height: 50px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            .hero-content {
+                padding: 6rem 0;
+            }
+            .navbar {
+                padding: 0.8rem 2rem;
+            }
+        }
+
+        /* Fix for very small devices */
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                border-radius: 40px;
+                padding: 0.8rem 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .hero-content {
+                padding: 3rem 0 4rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .hero-subhead {
+                font-size: 1.1rem;
+            }
+            .hero-desc {
+                font-size: 0.9rem;
+            }
+            .btn-primary, .btn-outline {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- Hero section with video background -->
+<!-- Hero Section with Video Background -->
 <div class="hero-section">
-    <!-- New Direct Cloudinary Video URL -->
+    <!-- Direct Cloudinary Video URL (provided) -->
     <video class="hero-video" autoplay muted loop playsinline>
         <source src="https://res.cloudinary.com/drldven2x/video/upload/v1/lv_7556186803154210109_20260612025639_jiwkfr.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="hero-overlay"></div>
-    
-    <!-- Navigation Bar with Logo Image -->
+
+    <!-- Navigation Bar (inside hero to overlay video) -->
     <div class="container" style="position: absolute; top: 0; left: 0; right: 0; z-index: 20;">
         <nav class="navbar">
             <a href="index.html">
@@ -190,12 +416,12 @@
             </div>
         </nav>
     </div>
-    
+
     <!-- Hero Content -->
     <div class="container hero-content">
         <div class="hero-badge">✦ PRIMAL LUX STUDIO</div>
         <h1>PRIMAL LUX</h1>
-        <div class="hero-subhead">Luxury-Level Execution. Primal-Level Instincts.</div>
+        <div class="hero-subhead">Luxury-Level Execution.<br>Primal-Level Instincts.</div>
         <div class="hero-desc">I help e-commerce brands increase conversions, elevate brand perception, and fix the silent problems costing them sales.</div>
         <div class="hero-buttons">
             <a href="work.html" class="btn-primary">VIEW WORK <i class="fas fa-arrow-right"></i></a>
@@ -205,80 +431,78 @@
     </div>
 </div>
 
-<!-- Core Team section (rest of the page remains the same) -->
-<div class="container" style="background:white;">
-    <section>
-        <div class="container" style="padding:0;">
-            <h2 class="section-title">CORE TEAM</h2>
-            <div class="team-grid">
-                <a href="hire.html?developer=Adenike%20O." style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-crown"></i>
-                        <h3>Adenike O.</h3>
-                        <div class="role">Lead Conversion Specialist</div>
-                        <div class="bio">10+ years optimising checkout flows, psychology-driven design, and revenue systems.</div>
-                        <div class="specialty">CRO • UX Psychology • High-Ticket Strategy</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-                <a href="hire.html?developer=Vas%20Horland" style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-eye"></i>
-                        <h3>Vas Horland</h3>
-                        <div class="role">Creative Director & Team Lead</div>
-                        <div class="bio">Oversees brand vision, client strategy, and luxury e‑commerce positioning.</div>
-                        <div class="specialty">Brand Architecture • Creative Direction</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-                <a href="hire.html?developer=Oliver%20King" style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Oliver King</h3>
-                        <div class="role">Lead Store Designer & Developer</div>
-                        <div class="bio">Builds high‑converting Shopify experiences with premium UI/UX and custom development.</div>
-                        <div class="specialty">Shopify • Liquid • Performance UI</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-                <a href="hire.html?developer=Abolade%20Bayonle" style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Abolade Bayonle</h3>
-                        <div class="role">QA & Optimization Specialist</div>
-                        <div class="bio">Handles testing, performance optimization, responsiveness, and customer experience refinement.</div>
-                        <div class="specialty">Quality Assurance • Speed Optimisation</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-                <a href="hire.html?developer=Daniel%20Reeves" style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-chart-simple"></i>
-                        <h3>Daniel Reeves</h3>
-                        <div class="role">Conversion Optimization Specialist</div>
-                        <div class="bio">Analyzes customer behavior, checkout flow, and sales performance to improve CR and AOV.</div>
-                        <div class="specialty">CRO • Data Analytics • A/B Testing</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-                <a href="hire.html?developer=Ethan%20Cole" style="text-decoration:none; color:inherit;">
-                    <div class="team-card">
-                        <i class="fas fa-palette"></i>
-                        <h3>Ethan Cole</h3>
-                        <div class="role">Brand Identity Strategist</div>
-                        <div class="bio">Develops cohesive visual direction, typography systems, and premium brand presentation.</div>
-                        <div class="specialty">Visual Identity • Premium Positioning</div>
-                        <div class="hire-btn">Hire me →</div>
-                    </div>
-                </a>
-            </div>
+<!-- Core Team Section -->
+<section>
+    <div class="container">
+        <h2 class="section-title">CORE TEAM</h2>
+        <div class="team-grid">
+            <a href="hire.html?developer=Adenike%20O." style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Adenike O.</h3>
+                    <div class="role">Lead Conversion Specialist</div>
+                    <div class="bio">10+ years optimising checkout flows, psychology-driven design, and revenue systems.</div>
+                    <div class="specialty">CRO • UX Psychology • High-Ticket Strategy</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
+            <a href="hire.html?developer=Vas%20Horland" style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Vas Horland</h3>
+                    <div class="role">Creative Director & Team Lead</div>
+                    <div class="bio">Oversees brand vision, client strategy, and luxury e‑commerce positioning.</div>
+                    <div class="specialty">Brand Architecture • Creative Direction</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
+            <a href="hire.html?developer=Oliver%20King" style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Oliver King</h3>
+                    <div class="role">Lead Store Designer & Developer</div>
+                    <div class="bio">Builds high‑converting Shopify experiences with premium UI/UX and custom development.</div>
+                    <div class="specialty">Shopify • Liquid • Performance UI</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
+            <a href="hire.html?developer=Abolade%20Bayonle" style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Abolade Bayonle</h3>
+                    <div class="role">QA & Optimization Specialist</div>
+                    <div class="bio">Handles testing, performance optimization, responsiveness, and customer experience refinement.</div>
+                    <div class="specialty">Quality Assurance • Speed Optimisation</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
+            <a href="hire.html?developer=Daniel%20Reeves" style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-chart-simple"></i>
+                    <h3>Daniel Reeves</h3>
+                    <div class="role">Conversion Optimization Specialist</div>
+                    <div class="bio">Analyzes customer behavior, checkout flow, and sales performance to improve CR and AOV.</div>
+                    <div class="specialty">CRO • Data Analytics • A/B Testing</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
+            <a href="hire.html?developer=Ethan%20Cole" style="text-decoration:none; color:inherit;">
+                <div class="team-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Ethan Cole</h3>
+                    <div class="role">Brand Identity Strategist</div>
+                    <div class="bio">Develops cohesive visual direction, typography systems, and premium brand presentation.</div>
+                    <div class="specialty">Visual Identity • Premium Positioning</div>
+                    <div class="hire-btn">Hire me →</div>
+                </div>
+            </a>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 
 <footer>
     <div class="container">
-        <div class="logo" style="font-size:1.5rem; margin-bottom:0.5rem;">PRIMAL LUX</div>
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
         <div>Built for brands that want more than just a “nice-looking” store.</div>
         <p>© 2026 Primal Lux. All Rights Reserved.</p>
     </div>
