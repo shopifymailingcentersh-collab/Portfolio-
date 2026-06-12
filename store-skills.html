@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Store Improvements – Primal Lux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+        
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:white; border-radius:60px; margin-top:1rem; border:1px solid var(--border-light); }
+        .logo-img { height:40px; width:auto; }
+        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; font-size:0.85rem; }
+        .nav-links a:hover { color:var(--gold); }
+        
+        .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .page-header h1 { font-size:2rem; margin-bottom:0.5rem; }
+        
+        .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.1s; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; }
+        .skill-card h3 { font-size:1rem; color:var(--forest); display:flex; align-items:center; gap:8px; }
+        .skill-card h3 i { color:var(--gold); }
+        
+        .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
+        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
+        
+        @media (min-width:768px) {
+            .skills-grid { grid-template-columns:repeat(2,1fr); }
+            .logo-img { height:50px; }
+        }
+        @media (min-width:1024px) {
+            .skills-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:480px) {
+            .navbar { flex-direction:column; align-items:center; }
+            .page-header h1 { font-size:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html"><img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Work</a>
+    
+    <div class="page-header">
+        <h1><i class="fas fa-chart-line"></i> Store Improvements & Marketing</h1>
+        <p>SEO, Google Ads, email marketing, CRO, analytics — everything that grows your revenue.</p>
+    </div>
+    
+    <div class="skills-grid" id="skillsGrid"></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
+        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const storeSkills = [
+        "SEO audit & optimization", "Google Shopping feed optimization", "Meta/ Facebook Ads setup", "Google Ads campaign management",
+        "Klaviyo email flow setup", "Abandoned cart email sequence", "Welcome series automation", "Post-purchase follow-up emails",
+        "SMS marketing integration (SMSBump, Postscript)", "Push notification campaigns", "Retargeting campaign setup",
+        "Conversion Rate Optimization (CRO)", "A/B testing implementation", "Heatmap analysis (Hotjar, Lucky Orange)", "Session recording review",
+        "User behavior flow analysis", "Funnel optimization", "Checkout abandonment reduction", "Cart recovery strategies",
+        "Average Order Value (AOV) increase", "Upsell/cross-sell strategy", "Post-purchase upsell implementation", "Volume discount setup",
+        "BOGO promotion configuration", "Free shipping bar optimization", "Minimum spend triggers", "Loyalty program setup (Rise, Yotpo)",
+        "Referral program implementation (ReferralCandy)", "Affiliate marketing integration", "Customer lifetime value tracking",
+        "Retention strategy development", "Win-back campaign design", "Customer segmentation", "Personalized product recommendations",
+        "Dynamic pricing rules", "Limited-time offer creation", "Flash sale setup", "Countdown timer implementation",
+        "Social proof notifications (Nosto, Fomo)", "Recent sales popup", "Low stock alerts", "High demand indicators",
+        "Review generation automation (Loox, Okendo)", "UGC gallery integration", "Influencer collaboration tracking", "Social media scheduling",
+        "Content marketing strategy", "Blog SEO optimization", "Product description enhancement", "Category page SEO",
+        "Meta tag optimization", "Alt text for images", "Internal linking structure", "XML sitemap generation",
+        "Google Analytics 4 setup", "Enhanced e-commerce tracking", "Conversion tracking setup", "Event/goal configuration",
+        "Custom dashboard creation", "Data Studio/Looker reports", "Customer cohort analysis", "Product performance analysis",
+        "Sales attribution modeling", "Marketing ROI calculation", "Customer acquisition cost tracking", "Return on ad spend optimization",
+        "Competitor analysis tools", "Keyword research (Ahrefs, SEMrush)", "Backlink audit & building", "Local SEO optimization",
+        "International SEO (hreflang)", "Voice search optimization", "Featured snippet targeting", "Rich snippet implementation",
+        "Google My Business optimization", "Bing Webmaster Tools", "Google Search Console setup", "Core Web Vitals monitoring",
+        "Page speed insights optimization", "Mobile usability testing", "Site structure optimization", "URL restructuring",
+        "Canonical URL management", "Redirect chain fixing", "404 error resolution", "Duplicate content resolution",
+        "Thin content improvement", "Pagination SEO", "Faceted navigation SEO", "JavaScript SEO considerations",
+        "E-commerce structured data", "Product schema markup", "Review schema implementation", "Breadcrumb schema",
+        "Organization schema (LocalBusiness)", "FAQ schema implementation", "How-to schema for tutorials", "Video schema markup",
+        "Email
