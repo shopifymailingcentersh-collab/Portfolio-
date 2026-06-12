@@ -65,7 +65,7 @@
     
     <div class="page-header">
         <h1><i class="fas fa-code"></i> Frontend & UI/UX Skills</h1>
-        <p>Click any skill below to get a price quote and connect with a developer</p>
+        <p>Click any skill below to get a price quote ($100 - $500) and connect with a developer</p>
     </div>
     
     <div class="skills-grid" id="skillsGrid"></div>
@@ -107,20 +107,17 @@
         "Comment section design", "Author bio box styling", "Category page optimization", "Collection page grid/List toggle",
         "Pagination styling", "Sort by dropdown enhancement", "Active filters display", "Clear filters button",
         "Product card hover effects", "Sale/New badge positioning", "Price display formatting", "Unit price display",
-        "Inventory level indicator", "Low stock warning badge", "Pre-order button styling", "Back-in-stock notification trigger"
+        "Inventory level indicator", "Low stock warning badge", "Pre-order button styling", "Back-in-stock notification trigger",
+        "Custom icon system design", "SVG animation implementation", "Scroll-triggered animations", "Parallax effect setup"
     ];
-    
-    // Ensure we have at least 100 items
-    while(frontendSkills.length < 102) {
-        frontendSkills.push("Custom icon system design", "SVG animation implementation", "Scroll-triggered animations");
-    }
     
     const grid = document.getElementById('skillsGrid');
     frontendSkills.forEach(skill => {
         const card = document.createElement('a');
         card.className = 'skill-card';
-        card.href = `skill-detail.html?skill=${encodeURIComponent(skill)}&category=frontend`;
-        card.innerHTML = `<h3><i class="fas fa-paint-brush"></i> ${skill}</h3><p>💰 Click to get price estimate ($100 - $500) →</p>`;
+        // Make sure the link points to the correct detail page
+        card.href = `skill-detail-frontend.html?skill=${encodeURIComponent(skill)}&category=frontend`;
+        card.innerHTML = `<h3><i class="fas fa-paint-brush"></i> ${skill}</h3><p>💰 Price: $100 - $500 • Click to solve →</p>`;
         grid.appendChild(card);
     });
 </script>
