@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Backend & Technical Skills – Primal Lux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+        
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:white; border-radius:60px; margin-top:1rem; border:1px solid var(--border-light); }
+        .logo-img { height:40px; width:auto; }
+        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; font-size:0.85rem; }
+        .nav-links a:hover { color:var(--gold); }
+        
+        .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .page-header h1 { font-size:2rem; margin-bottom:0.5rem; }
+        .page-header p { opacity:0.9; }
+        
+        .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.1s; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; }
+        .skill-card h3 { font-size:1rem; color:var(--forest); margin-bottom:0.3rem; display:flex; align-items:center; gap:8px; }
+        .skill-card h3 i { color:var(--gold); font-size:0.9rem; }
+        .skill-card p { font-size:0.8rem; color:#5A6E6E; }
+        
+        .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
+        .back-link:hover { color:var(--gold); }
+        
+        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
+        
+        @media (min-width:768px) {
+            .skills-grid { grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+            .logo-img { height:50px; }
+        }
+        @media (min-width:1024px) {
+            .skills-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:480px) {
+            .navbar { flex-direction:column; align-items:center; }
+            .page-header h1 { font-size:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html"><img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Work</a>
+    
+    <div class="page-header">
+        <h1><i class="fas fa-server"></i> Backend & Technical Solutions</h1>
+        <p>Server configuration, databases, APIs, security, performance — everything that runs your store behind the scenes.</p>
+    </div>
+    
+    <div class="skills-grid" id="skillsGrid"></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
+        <div>Built for brands that want more than just a “nice-looking” store.</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const backendSkills = [
+        "Database optimization & indexing", "Server response time reduction", "API integration & custom endpoints", "Webhook configuration & debugging",
+        "SSL certificate setup & renewal", "Load balancing & scaling", "Caching strategies (Redis, Memcached)", "CDN configuration & optimization",
+        "Backup automation & disaster recovery", "Payment gateway integration (Stripe, PayPal, Shopify Payments)", "Inventory sync across channels",
+        "Order management system optimization", "Shipping API integration (ShipStation, EasyPost)", "Tax calculation engine setup",
+        "Customer account system customization", "Authentication & authorization flows", "Rate limiting & DDoS protection", "Firewall configuration",
+        "Malware scanning & removal", "PCI compliance implementation", "GDPR/CCPA compliance tools", "Cookie consent management",
+        "Server log analysis", "Error tracking & monitoring (Sentry, New Relic)", "Uptime monitoring setup", "Performance profiling",
+        "Database migration (MySQL, PostgreSQL)", "Data import/export automation", "CRON job scheduling", "Queue management systems",
+        "Search engine optimization (server-side)", "Sitemap generation & management", "Structured data implementation (JSON-LD)",
+        "Redirect management (301, 302)", "Robots.txt optimization", "htaccess configuration", "Nginx/Apache tuning",
+        "PHP memory limit optimization", "MySQL query optimization", "Redis cache implementation", "Elasticsearch setup for product search",
+        "Image optimization pipeline", "WebP conversion automation", "Lazy loading implementation", "Critical CSS extraction",
+        "HTTP/2 & HTTP/3 enablement", "Brotli compression setup", "DNS configuration & management", "Email deliverability setup (SPF, DKIM, DMARC)",
+        "Transactional email integration", "SMS notification systems", "Push notification setup", "Real-time inventory updates",
+        "Subscription/recurring billing systems", "Loyalty program backend", "Referral system automation", "Affiliate tracking integration",
+        "Review system backend (Judge.me, Okendo)", "Live chat backend configuration", "Chatbot integration (Gorgias, Tidio)",
+        "Helpdesk integration (Zendesk, Freshdesk)", "CRM synchronization (HubSpot, Salesforce)", "ERP integration (NetSuite, Odoo)",
+        "Warehouse management system integration", "3PL provider API connection", "Returns management automation", "Exchange/Warranty tracking",
+        "Multi-currency setup & conversion", "Multi-language store backend", "International pricing rules", "Localization database setup",
+        "Bulk discount engine configuration", "Dynamic pricing rules", "Cart rule automation", "Abandoned cart recovery backend",
+        "Email automation backend (Klaviyo, Omnisend)", "SMS marketing integration", "Web push notification backend", "Personalization engine setup",
+        "Recommendation algorithm tuning", "Search relevance optimization", "Faceted search backend", "Filter system optimization",
+        "Custom product option backend", "Bundling/kitting engine", "Dynamic product pricing rules", "Inventory forecasting system",
+        "Low stock alert automation", "Backorder management", "Pre-order system setup", "Digital product delivery automation",
+        "Downloadable product security", "License key management", "Membership access control", "Role-based permission systems",
+        "Audit logging & compliance tracking", "Data anonymization tools", "Encryption implementation (AES-256)", "Secure file upload handling",
+        "CSRF/XSS protection hardening", "SQL injection prevention", "Session management security", "Two-factor authentication setup",
+        "OAuth integration (Google, Facebook, Apple)", "SAML/SSO configuration", "JWT implementation", "API rate limiting strategies"
+    ];
+    
+    // Ensure we have at least 100 items
+    while(backendSkills.length < 105) {
+        backendSkills.push("Additional security hardening", "Performance audit & fix", "Custom backend automation", "Legacy system migration", "Infrastructure documentation");
+    }
+    
+    const grid = document.getElementById('skillsGrid');
+    backendSkills.forEach(skill => {
+        const card = document.createElement('div');
+        card.className = 'skill-card';
+        card.innerHTML = `<h3><i class="fas fa-cog"></i> ${skill}</h3><p>Expert solution & implementation available</p>`;
+        grid.appendChild(card);
+    });
+</script>
+</body>
+</html>
