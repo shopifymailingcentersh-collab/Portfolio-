@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Solve Store Issue – Primal Lux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+        
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:white; border-radius:60px; margin-top:1rem; border:1px solid var(--border-light); }
+        .logo-img { height:40px; width:auto; }
+        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; font-size:0.85rem; }
+        .nav-links a:hover { color:var(--gold); }
+        
+        .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .page-header h1 { font-size:1.6rem; margin-bottom:0.5rem; word-break:break-word; }
+        
+        .content-grid { display:grid; grid-template-columns:1fr; gap:2rem; margin:2rem 0; }
+        @media (min-width:992px) { .content-grid { grid-template-columns:1fr 1fr; gap:3rem; } }
+        
+        .info-card, .form-card { background:white; border-radius:32px; padding:2rem; border:1px solid var(--border-light); }
+        .price-tag { font-size:2rem; font-weight:800; color:var(--gold); margin:1rem 0; }
+        .difficulty { display:inline-block; padding:0.2rem 1rem; border-radius:30px; background:#F0F2F5; font-size:0.8rem; margin-bottom:1rem; }
+        
+        .form-group { margin-bottom:1.5rem; }
+        label { display:block; margin-bottom:0.5rem; font-weight:600; color:var(--charcoal); }
+        input, select, textarea { width:100%; padding:0.8rem; border:1px solid var(--border-light); border-radius:20px; font-family:inherit; }
+        textarea { resize:vertical; }
+        .btn-submit { background:var(--forest); color:white; border:none; padding:0.8rem 2rem; border-radius:40px; font-weight:600; cursor:pointer; width:100%; font-size:1rem; }
+        .btn-submit:hover { background:#1C553F; }
+        .btn-submit:disabled { opacity:0.5; cursor:not-allowed; }
+        
+        .contact-buttons { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem; justify-content:center; }
+        .contact-btn { display:inline-flex; align-items:center; gap:8px; padding:0.7rem 1.2rem; border-radius:40px; font-weight:600; text-decoration:none; transition:0.2s; }
+        .whatsapp { background:#25D366; color:white; }
+        .linkedin { background:#0077B5; color:white; }
+        .call { background:var(--gold); color:var(--charcoal); }
+        
+        .alert { padding:1rem; border-radius:20px; margin-bottom:1rem; display:none; }
+        .alert-success { background:#D4EDDA; color:#155724; border:1px solid #C3E6CB; }
+        .alert-error { background:#F8D7DA; color:#721C24; border:1px solid #F5C6CB; }
+        
+        .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
+        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
+        
+        @media (min-width:768px) { .logo-img { height:50px; } }
+        @media (max-width:480px) { .navbar { flex-direction:column; align-items:center; } .page-header h1 { font-size:1.2rem; } .price-tag { font-size:1.5rem; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html"><img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <a href="javascript:history.back()" class="back-link"><i class="fas fa-arrow-left"></i> Back to Store Skills</a>
+    
+    <div id="alertBox" class="alert"></div>
+    
+    <div class="page-header">
+        <h1 id="skillTitle">Loading...</h1>
+        <p>Store Improvement & Marketing • Get a fixed price quote</p>
+    </div>
+    
+    <div class="content-grid">
+        <div class="info-card">
+            <h3><i class="fas fa-calculator"></i> Price Estimate</h3>
+            <div class="price-tag" id="priceRange">$150 - $4,500 USD</div>
+            <div class="difficulty" id="difficultyLevel">Complexity: Varies</div>
+            <p style="margin-top:1rem;">Store improvements include SEO, marketing campaigns, CRO, analytics, and revenue optimization.</p>
+            <hr style="margin:1.5rem 0;">
+            <h4><i class="fas fa-clock"></i> How it works:</h4>
+            <ol style="margin-top:0.5rem; padding-left:1.2rem; color:#5A6E6E;">
+                <li>Fill out the form describing your store issue</li>
+                <li>We review and send you a fixed price</li>
+                <li>You approve & we start within 24 hours</li>
+                <li>After form submission, contact options appear below</li>
+            </ol>
+        </div>
+        
+        <div class="form-card">
+            <h3><i class="fas fa-file-alt"></i> Submit Your Store Improvement Request</h3>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label>Your Full Name *</label>
+                    <input type="text" id="userName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="userEmail" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Skill / Improvement *</label>
+                    <input type="text" id="skillName" readonly style="background:#F5F6F2;">
+                </div>
+                <div class="form-group">
+                    <label>Describe your store needs in detail *</label>
+                    <textarea id="issueDescription" rows="4" placeholder="What's your current situation? What are your goals? What have you tried?" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Project Scale *</label>
+                    <select id="complexity" required>
+                        <option value="">Select project scale...</option>
+                        <option value="Basic">Basic ($150 - $500) - Small optimization, 1-5 hours</option>
+                        <option value="Medium">Medium ($500 - $1,500) - Moderate campaign or audit, 1-2 weeks</option>
+                        <option value="Complex">Complex ($1,500 - $3,000) - Full strategy implementation, 2-4 weeks</option>
+                        <option value="Enterprise">Enterprise ($3,000 - $4,500+) - Complete overhaul, 1-3 months</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Submit Request</button>
+            </form>
+            
+            <div id="contactSection" style="margin-top:2rem; text-align:center; display:none;">
+                <hr style="margin-bottom:1.5rem;">
+                <h4><i class="fas fa-comments"></i> Choose how to contact the developer</h4>
+                <p style="font-size:0.85rem; margin-bottom:1rem; color:var(--forest);">✅ Your store improvement request has been submitted! Now you can chat with us directly:</p>
+                <div class="contact-buttons">
+                    <a href="#" id="whatsappLink" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#" id="linkedinLink" target="_blank" class="contact-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" id="callLink" class="contact-btn call"><i class="fas fa-calendar-alt"></i> Schedule Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX</div>
+        <div>Built for brands that want more than just a "nice-looking" store.</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let skill = urlParams.get('skill');
+    if (!skill) skill = "Store Improvement Request";
+    skill = decodeURIComponent(skill);
+    
+    document.getElementById('skillTitle').innerText = skill;
+    document.getElementById('skillName').value = skill;
+    
+    const WHATSAPP_LINK = "https://wa.link/ugoqd7";
+    const LINKEDIN_LINK = "https://www.linkedin.com/in/abolade-bayonle-455846415";
+    const CALENDLY_LINK = "https://calendly.com/oliverkingdev/30min";
+    
+    const form = document.getElementById('issueForm');
+    const alertBox = document.getElementById('alertBox');
+    const contactSection = document.getElementById('contactSection');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const userName = document.getElementById('userName').value.trim();
+        const userEmail = document.getElementById('userEmail').value.trim();
+        const issueDesc = document.getElementById('issueDescription').value.trim();
+        const complexity = document.getElementById('complexity').value;
+        
+        if (!userName || !userEmail || !issueDesc || !complexity) {
+            alertBox.className = "alert alert-error";
+            alertBox.innerHTML = "❌ Please fill in all required fields.";
+            alertBox.style.display = "block";
+            setTimeout(() => { alertBox.style.display = "none"; }, 4000);
+            return;
+        }
+        
+        if (!userEmail.includes('@')) {
+            alertBox.className = "alert alert-error";
+            alertBox.innerHTML = "❌ Please enter a valid email address.";
+            alertBox.style.display = "block";
+            setTimeout(() => { alertBox.style.display = "none"; }, 4000);
+            return;
+        }
+        
+        let priceRange = "";
+        if (complexity === "Basic") priceRange = "$150 - $500";
+        else if (complexity === "Medium") priceRange = "$500 - $1,500";
+        else if (complexity === "Complex") priceRange = "$1,500 - $3,000";
+        else priceRange = "$3,000 - $4,500+";
+        
+        const emailBody = `NEW STORE IMPROVEMENT REQUEST\n\n` +
+            `Name: ${userName}\nEmail: ${userEmail}\nSkill: ${skill}\nProject Scale: ${complexity}\nPrice Estimate: ${priceRange}\n\nRequest Details:\n${issueDesc}`;
+        
+        window.location.href = `mailto:primaluxecommerce@gmail.com?subject=Store Improvement: ${encodeURIComponent(skill)}&body=${encodeURIComponent(emailBody)}`;
+        
+        alertBox.className = "alert alert-success";
+        alertBox.innerHTML = "✅ Request submitted successfully! Contact options are now available below.";
+        alertBox.style.display = "block";
+        
+        form.querySelectorAll('input, select, textarea').forEach(el => { el.disabled = true; });
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "<i class='fas fa-check'></i> Submitted!";
+        
+        contactSection.style.display = "block";
+        
+        const message = `Hi, I just submitted a store improvement request about: ${skill}. My name is ${userName}. Please get back to me.`;
+        document.getElementById('whatsappLink').href = `${WHATSAPP_LINK}?text=${encodeURIComponent(message)}`;
+        document.getElementById('linkedinLink').href = LINKEDIN_LINK;
+        document.getElementById('callLink').href = CALENDLY_LINK;
+        
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+</script>
+</body>
+</html>
