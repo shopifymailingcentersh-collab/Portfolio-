@@ -9,15 +9,26 @@
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; overflow-x:hidden; }
-        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
-        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; position:relative; z-index:2; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --gold-light:#F5E17A; --border-light:#E8EBE4; }
         
-        /* Navigation */
-        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:rgba(0,0,0,0.3); backdrop-filter:blur(12px); border-radius:60px; margin-top:1rem; border:1px solid rgba(255,255,255,0.2); }
-        .logo-img { height:40px; width:auto; display:block; filter:brightness(0) invert(1); }
-        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; justify-content:center; }
-        .nav-links a { color:white; text-decoration:none; font-weight:500; font-size:0.85rem; transition:0.2s; text-shadow:0 1px 2px rgba(0,0,0,0.2); }
-        .nav-links a:hover { color:var(--gold); }
+        /* Navigation - Mobile First */
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0.6rem 1rem; 
+            flex-wrap: wrap; 
+            gap: 0.6rem; 
+            background: rgba(0,0,0,0.3); 
+            backdrop-filter: blur(12px); 
+            border-radius: 50px; 
+            margin-top: 0.8rem; 
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .logo-img { height: 35px; width: auto; display: block; filter: brightness(0) invert(1); }
+        .nav-links { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 0.7rem; transition: 0.2s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .nav-links a:hover { color: var(--gold); }
         
         /* Hero Section with Video Background */
         .hero-section {
@@ -48,19 +59,7 @@
             z-index: 1;
         }
         
-        /* Content that appears AFTER video */
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            background: #FCFCF8;
-            margin-top: 100vh;
-            border-radius: 40px 40px 0 0;
-            box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
-            padding-top: 3rem;
-        }
-        
-        /* Hero Text Section (on video) */
+        /* Hero Text - Mobile Optimized */
         .hero-text {
             position: absolute;
             top: 50%;
@@ -72,7 +71,8 @@
             max-width: 900px;
             color: white;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
+            animation: fadeInUp 0.8s ease-out 0.5s forwards;
+            padding: 0 0.8rem;
         }
         @keyframes fadeInUp {
             from {
@@ -85,92 +85,214 @@
             }
         }
         .hero-badge { 
-            font-size:0.8rem; 
-            letter-spacing:3px; 
-            color:var(--gold); 
-            font-weight:600; 
-            margin-bottom:1rem; 
-            background:rgba(0,0,0,0.4);
-            display:inline-block;
-            padding:0.3rem 1.2rem;
-            border-radius:40px;
-            backdrop-filter:blur(4px);
+            font-size: 0.65rem; 
+            letter-spacing: 2px; 
+            color: var(--gold); 
+            font-weight: 600; 
+            margin-bottom: 0.8rem; 
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
         }
         .hero-text h1 { 
-            font-size:3.5rem; 
-            font-weight:800; 
-            line-height:1.2; 
-            margin-bottom:0.75rem; 
-            color:white; 
-            text-shadow:0 4px 15px rgba(0,0,0,0.4);
+            font-size: 2rem; 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 0.5rem; 
+            color: white; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
         .hero-subhead { 
-            font-size:1.3rem; 
-            font-weight:600; 
-            color:var(--gold-light); 
-            margin-bottom:1rem; 
-            text-shadow:0 2px 5px rgba(0,0,0,0.3);
+            font-size: 1rem; 
+            font-weight: 600; 
+            color: var(--gold-light); 
+            margin-bottom: 0.8rem; 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
         .hero-desc { 
-            font-size:1rem; 
-            max-width:600px; 
-            margin:0 auto 1.8rem; 
-            color:#f0f0f0; 
-            text-shadow:0 1px 3px rgba(0,0,0,0.3);
-            line-height:1.6;
+            font-size: 0.8rem; 
+            max-width: 500px; 
+            margin: 0 auto 1.2rem; 
+            color: #f0f0f0; 
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            line-height: 1.5;
+            padding: 0 0.5rem;
         }
-        .hero-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
-        .btn-primary, .btn-outline { display:inline-block; padding:0.7rem 1.5rem; border-radius:40px; font-weight:600; text-decoration:none; transition:0.2s; font-size:0.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-        .btn-primary { background:var(--gold); color:var(--charcoal); border:none; }
-        .btn-primary:hover { background:#F5E17A; transform:translateY(-2px); }
-        .btn-outline { border:1.5px solid white; color:white; background:rgba(0,0,0,0.3); backdrop-filter:blur(4px); }
-        .btn-outline:hover { background:white; color:var(--forest); border-color:white; }
-        .trusted-badge { font-size:0.7rem; color:#ddd; background:rgba(0,0,0,0.3); display:inline-block; padding:0.4rem 1.2rem; border-radius:60px; backdrop-filter:blur(4px); }
-        
-        /* Section Styles */
-        section { padding:4rem 0; }
-        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; color:var(--charcoal); position:relative; display:inline-block; }
-        .section-title:after { content:''; position:absolute; bottom:-10px; left:0; width:60px; height:3px; background:var(--gold); }
-        
-        /* AI Stats Grid */
-        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; margin:2rem 0; text-align:center; }
-        .stat-card { background:white; border-radius:28px; padding:1.8rem; border:1px solid var(--border-light); }
-        .stat-number { font-size:2.5rem; font-weight:800; color:var(--forest); }
-        .stat-label { font-size:0.85rem; color:#5A6E6E; margin-top:0.5rem; }
-        
-        /* Platform Grid */
-        .platform-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:1rem; margin:2rem 0; }
-        .platform-card { background:white; border-radius:20px; padding:1rem; text-align:center; border:1px solid var(--border-light); transition:0.2s; }
-        .platform-card i { font-size:2rem; color:var(--gold); margin-bottom:0.5rem; }
-        .platform-card span { font-size:0.8rem; font-weight:500; display:block; }
-        .platform-card:hover { transform:translateY(-3px); border-color:var(--gold); }
-        
-        /* Core Team Grid */
-        .team-grid { display:grid; grid-template-columns:1fr; gap:1.5rem; margin:2rem 0; }
-        .team-card { background:white; border-radius:28px; padding:1.5rem; border:1px solid var(--border-light); transition:all 0.2s; text-align:center; cursor:pointer; text-decoration:none; color:inherit; display:block; }
-        .team-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px -12px rgba(0,0,0,0.1); border-color:var(--gold); }
-        .team-card i { font-size:2.4rem; color:var(--gold); margin-bottom:0.8rem; }
-        .team-card h3 { font-size:1.2rem; margin-bottom:0.2rem; color:var(--charcoal); }
-        .team-card .role { font-weight:600; color:var(--forest); margin-bottom:0.5rem; font-size:0.75rem; }
-        .team-card .bio { font-size:0.8rem; color:#5A6E6E; margin-bottom:0.8rem; }
-        .hire-btn { margin-top:0.8rem; background:var(--gold); color:var(--charcoal); border:none; padding:0.35rem 1rem; border-radius:30px; font-weight:600; font-size:0.75rem; display:inline-block; }
-        
-        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; background:white; border-top:1px solid var(--border-light); }
-        
-        @media (min-width:768px) {
-            .team-grid { grid-template-columns:repeat(2,1fr); gap:2rem; }
-            .logo-img { height:50px; }
-            .hero-text h1 { font-size:4.5rem; }
-            .hero-subhead { font-size:1.5rem; }
+        .hero-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.2rem; }
+        .btn-primary, .btn-outline { 
+            display: inline-block; 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 40px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            transition: 0.2s; 
+            font-size: 0.75rem; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
-        @media (min-width:1024px) {
-            .team-grid { grid-template-columns:repeat(3,1fr); }
+        .btn-primary { background: var(--gold); color: var(--charcoal); border: none; }
+        .btn-primary:hover { background: #F5E17A; transform: translateY(-2px); }
+        .btn-outline { border: 1.5px solid white; color: white; background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); }
+        .btn-outline:hover { background: white; color: var(--forest); border-color: white; }
+        .trusted-badge { 
+            font-size: 0.6rem; 
+            color: #ddd; 
+            background: rgba(0,0,0,0.3); 
+            display: inline-block; 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 40px; 
+            backdrop-filter: blur(4px);
         }
-        @media (max-width:480px) {
-            .navbar { flex-direction:column; align-items:center; }
-            .hero-text h1 { font-size:2.2rem; }
-            .hero-subhead { font-size:1rem; }
-            .hero-desc { font-size:0.85rem; }
+        
+        /* Scrollable Content */
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            background: #FCFCF8;
+            margin-top: 100vh;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 -15px 30px rgba(0,0,0,0.08);
+            padding-top: 2rem;
+        }
+        
+        /* Section Styles - Mobile First */
+        section { padding: 2.5rem 0; }
+        .section-title { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-bottom: 1.2rem; 
+            color: var(--charcoal); 
+            position: relative; 
+            display: inline-block; 
+        }
+        .section-title:after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -8px; 
+            left: 0; 
+            width: 50px; 
+            height: 3px; 
+            background: var(--gold); 
+        }
+        
+        /* Stats Grid - Mobile First */
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 1rem; 
+            margin: 1.5rem 0; 
+            text-align: center; 
+        }
+        .stat-card { 
+            background: white; 
+            border-radius: 24px; 
+            padding: 1.2rem; 
+            border: 1px solid var(--border-light); 
+        }
+        .stat-number { font-size: 1.6rem; font-weight: 800; color: var(--forest); }
+        .stat-label { font-size: 0.7rem; color: #5A6E6E; margin-top: 0.3rem; }
+        
+        /* Platform Grid - Mobile First */
+        .platform-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 0.8rem; 
+            margin: 1.5rem 0; 
+        }
+        .platform-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 0.8rem; 
+            text-align: center; 
+            border: 1px solid var(--border-light); 
+            transition: 0.2s; 
+        }
+        .platform-card i { font-size: 1.6rem; color: var(--gold); margin-bottom: 0.3rem; }
+        .platform-card span { font-size: 0.7rem; font-weight: 500; display: block; }
+        
+        /* Team Grid - Mobile First */
+        .team-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 1.2rem; 
+            margin: 1.5rem 0; 
+        }
+        .team-card { 
+            background: white; 
+            border-radius: 24px; 
+            padding: 1.2rem; 
+            border: 1px solid var(--border-light); 
+            transition: all 0.2s; 
+            text-align: center; 
+            cursor: pointer; 
+            text-decoration: none; 
+            color: inherit; 
+            display: block; 
+        }
+        .team-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -8px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .team-card i { font-size: 2rem; color: var(--gold); margin-bottom: 0.6rem; }
+        .team-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; color: var(--charcoal); }
+        .team-card .role { font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; font-size: 0.65rem; }
+        .team-card .bio { font-size: 0.7rem; color: #5A6E6E; margin-bottom: 0.6rem; line-height: 1.4; }
+        .hire-btn { 
+            margin-top: 0.6rem; 
+            background: var(--gold); 
+            color: var(--charcoal); 
+            border: none; 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            font-size: 0.65rem; 
+            display: inline-block; 
+        }
+        
+        footer { padding: 1.5rem 0; text-align: center; color: #6B7B7B; font-size: 0.65rem; background: white; border-top: 1px solid var(--border-light); }
+        
+        /* Tablet and Desktop Improvements */
+        @media (min-width: 640px) {
+            .navbar { padding: 0.8rem 1.5rem; }
+            .logo-img { height: 45px; }
+            .nav-links a { font-size: 0.85rem; gap: 1.2rem; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-subhead { font-size: 1.3rem; }
+            .hero-desc { font-size: 0.95rem; }
+            .hero-badge { font-size: 0.75rem; }
+            .btn-primary, .btn-outline { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
+            .stats-grid { gap: 1.5rem; }
+            .stat-number { font-size: 2rem; }
+            .platform-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            section { padding: 3rem 0; }
+            .section-title { font-size: 1.8rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            .team-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero-text h1 { font-size: 4rem; }
+            .hero-subhead { font-size: 1.5rem; }
+            .hero-desc { font-size: 1rem; }
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .navbar { flex-direction: column; align-items: center; padding: 0.6rem; }
+            .nav-links { gap: 0.6rem; }
+            .hero-text { width: 95%; }
+            .hero-text h1 { font-size: 1.6rem; }
+            .hero-subhead { font-size: 0.85rem; }
+            .hero-desc { font-size: 0.7rem; margin-bottom: 1rem; }
+            .btn-primary, .btn-outline { padding: 0.5rem 1rem; font-size: 0.7rem; }
+            .trusted-badge { font-size: 0.55rem; }
+            .stat-number { font-size: 1.3rem; }
+            .stat-label { font-size: 0.6rem; }
+            .platform-card i { font-size: 1.3rem; }
+            .platform-card span { font-size: 0.6rem; }
+            .team-card { padding: 1rem; }
+            .team-card i { font-size: 1.6rem; }
+            .team-card h3 { font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -185,7 +307,7 @@
     <div class="hero-overlay"></div>
     
     <!-- Navigation -->
-    <div class="container" style="position: absolute; top: 0; left: 0; right: 0; z-index: 20;">
+    <div class="container" style="position: absolute; top: 0; left: 0; right: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
         <nav class="navbar">
             <a href="index.html">
                 <img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo">
@@ -207,24 +329,24 @@
         <div class="hero-subhead">Transform Your Online Business with Artificial Intelligence</div>
         <div class="hero-desc">We help e-commerce brands & online businesses leverage AI to increase conversions, automate operations, personalize customer experiences, and fix the invisible problems killing your sales — on ANY platform.</div>
         <div class="hero-buttons">
-            <a href="work.html" class="btn-primary">EXPLORE AI SOLUTIONS <i class="fas fa-arrow-right"></i></a>
-            <a href="contact.html" class="btn-outline">BOOK A FREE AI AUDIT <i class="fas fa-calendar-alt"></i></a>
+            <a href="work.html" class="btn-primary">EXPLORE AI <i class="fas fa-arrow-right"></i></a>
+            <a href="contact.html" class="btn-outline">FREE AI AUDIT <i class="fas fa-calendar-alt"></i></a>
         </div>
-        <div class="trusted-badge">Trusted by 500+ e-commerce brands & online businesses worldwide</div>
+        <div class="trusted-badge">Trusted by 500+ e-commerce brands worldwide</div>
     </div>
 </div>
 
 <!-- Scrollable Content (appears after video) -->
 <div class="content-wrapper">
-    <div class="container">
+    <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
         <!-- AI Impact Stats -->
         <section>
             <h2 class="section-title">The AI Advantage</h2>
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">+35%</div><div class="stat-label">Average Conversion Lift</div></div>
-                <div class="stat-card"><div class="stat-number">-45%</div><div class="stat-label">Customer Acquisition Cost</div></div>
-                <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">AI-Powered Automation</div></div>
-                <div class="stat-card"><div class="stat-number">10x</div><div class="stat-label">Faster Decision Making</div></div>
+                <div class="stat-card"><div class="stat-number">+35%</div><div class="stat-label">Avg Conversion Lift</div></div>
+                <div class="stat-card"><div class="stat-number">-45%</div><div class="stat-label">Customer Acquisition</div></div>
+                <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">AI Automation</div></div>
+                <div class="stat-card"><div class="stat-number">10x</div><div class="stat-label">Faster Decisions</div></div>
             </div>
         </section>
         
@@ -237,7 +359,7 @@
                 <div class="platform-card"><i class="fab fa-magento"></i><span>Magento</span></div>
                 <div class="platform-card"><i class="fas fa-cart-shopping"></i><span>BigCommerce</span></div>
                 <div class="platform-card"><i class="fab fa-salesforce"></i><span>Salesforce</span></div>
-                <div class="platform-card"><i class="fas fa-code"></i><span>Custom Builds</span></div>
+                <div class="platform-card"><i class="fas fa-code"></i><span>Custom</span></div>
                 <div class="platform-card"><i class="fab fa-etsy"></i><span>Etsy</span></div>
                 <div class="platform-card"><i class="fab fa-amazon"></i><span>Amazon</span></div>
             </div>
@@ -251,28 +373,28 @@
                     <i class="fas fa-brain"></i>
                     <h3>Adenike O.</h3>
                     <div class="role">Lead AI Conversion Specialist</div>
-                    <div class="bio">10+ years optimizing with AI & machine learning for e-commerce</div>
+                    <div class="bio">10+ years optimizing with AI & machine learning</div>
                     <div class="hire-btn">Hire me →</div>
                 </a>
                 <a href="hire.html?developer=Vas%20Horland" class="team-card">
                     <i class="fas fa-robot"></i>
                     <h3>Vas Horland</h3>
                     <div class="role">AI Strategy Director</div>
-                    <div class="bio">Oversees AI implementation & automation across all platforms</div>
+                    <div class="bio">AI implementation & automation across all platforms</div>
                     <div class="hire-btn">Hire me →</div>
                 </a>
                 <a href="hire.html?developer=Oliver%20King" class="team-card">
                     <i class="fas fa-chart-line"></i>
                     <h3>Oliver King</h3>
                     <div class="role">Lead AI Integration Engineer</div>
-                    <div class="bio">Builds custom AI solutions for any e-commerce ecosystem</div>
+                    <div class="bio">Custom AI solutions for any e-commerce ecosystem</div>
                     <div class="hire-btn">Hire me →</div>
                 </a>
                 <a href="hire.html?developer=Abolade%20Bayonle" class="team-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Abolade Bayonle</h3>
                     <div class="role">AI Quality & Optimization Lead</div>
-                    <div class="bio">Ensures AI systems deliver measurable ROI</div>
+                    <div class="bio">Ensuring AI systems deliver measurable ROI</div>
                     <div class="hire-btn">Hire me →</div>
                 </a>
                 <a href="hire.html?developer=Daniel%20Reeves" class="team-card">
@@ -294,10 +416,10 @@
     </div>
     
     <footer>
-        <div class="container">
-            <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX AI</div>
-            <div>AI-powered solutions for every e-commerce platform & online business</div>
-            <p>© 2026 Primal Lux. All Rights Reserved.</p>
+        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+            <div style="font-size: 0.9rem; margin-bottom: 0.3rem; font-weight: 600;">PRIMAL LUX AI</div>
+            <div style="font-size: 0.65rem;">AI-powered solutions for every e-commerce platform & online business</div>
+            <p style="font-size: 0.6rem; margin-top: 0.5rem;">© 2026 Primal Lux. All Rights Reserved.</p>
         </div>
     </footer>
 </div>
