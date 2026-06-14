@@ -103,4 +103,18 @@
         "Birthday email generator AI", "Anniversary email automation", "Milestone celebration AI", "Loyalty program content",
         "Referral email writer AI", "Win-back campaign content", "Survey email generator AI", "Feedback request automation",
         "Review request email AI", "Testimonial collection bot", "Case study request automation", "Customer story writer AI",
-        "Brand storytelling AI", "Mission statement generator", "
+        "Brand storytelling AI", "Mission statement generator", "Value proposition writer AI", "Unique selling point AI",
+        "Tagline generator AI", "Slogan creator AI", "Brand name suggestion AI", "Domain name generator AI"
+    ];
+    
+    const grid = document.getElementById('skillsGrid');
+    aiContentSkills.forEach(skill => {
+        const card = document.createElement('a');
+        card.className = 'skill-card';
+        card.href = `skill-detail-ai.html?skill=${encodeURIComponent(skill)}&category=content&price=100-4000`;
+        card.innerHTML = `<h3><i class="fas fa-pen-fancy"></i> ${skill}</h3><p>💰 Price: $100 - $4,000+ • Click to solve →</p>`;
+        grid.appendChild(card);
+    });
+</script>
+</body>
+</html>
