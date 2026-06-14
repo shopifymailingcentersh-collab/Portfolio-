@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AI Automation & Operations – Primal Lux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+        
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:white; border-radius:60px; margin-top:1rem; border:1px solid var(--border-light); }
+        .logo-img { height:40px; width:auto; }
+        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; font-size:0.85rem; }
+        .nav-links a:hover { color:var(--gold); }
+        
+        .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .page-header h1 { font-size:2rem; margin-bottom:0.5rem; }
+        
+        .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.2s; cursor:pointer; text-decoration:none; display:block; color:inherit; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; transform:translateX(4px); }
+        .skill-card h3 { font-size:1rem; color:var(--forest); display:flex; align-items:center; gap:8px; }
+        .skill-card h3 i { color:var(--gold); }
+        .skill-card p { font-size:0.75rem; color:#5A6E6E; margin-top:0.3rem; }
+        
+        .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
+        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
+        
+        @media (min-width:768px) {
+            .skills-grid { grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+            .logo-img { height:50px; }
+        }
+        @media (min-width:1024px) {
+            .skills-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:480px) {
+            .navbar { flex-direction:column; align-items:center; }
+            .page-header h1 { font-size:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html"><img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to AI Solutions</a>
+    
+    <div class="page-header">
+        <h1><i class="fas fa-robot"></i> AI Automation & Operations</h1>
+        <p>Click any AI solution below to get a price quote ($200 - $8,000+) and connect with an expert</p>
+    </div>
+    
+    <div class="skills-grid" id="skillsGrid"></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX AI</div>
+        <div>AI-powered solutions for every e-commerce platform & online business</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const aiAutomationSkills = [
+        "AI-powered customer support chatbots", "Intelligent email automation flows", "Abandoned cart recovery AI", "Automated customer segmentation",
+        "Workflow automation with AI triggers", "Inventory forecasting AI system", "Automated purchase order generation", "Supplier lead time prediction",
+        "Warehouse optimization AI", "Route optimization for shipping", "Automated returns processing AI", "Quality control computer vision",
+        "AI-powered product categorization", "Automated meta tag generation", "Bulk product upload automation", "Data cleaning & enrichment AI",
+        "Automated pricing adjustment AI", "Competitor price tracking bot", "Dynamic discount rules engine", "Promotion optimization AI",
+        "Social media scheduling AI", "Automated content distribution", "Blog post generation automation", "Newsletter personalization AI",
+        "AI-powered product description writer", "Automated alt text generation", "SEO meta description AI", "Keyword research automation",
+        "Automated backlink analysis", "Competitor SEO monitoring", "Rank tracking automation", "Technical SEO audit AI",
+        "Automated sitemap generation", "Schema markup automation", "Internal linking suggestion AI", "Content gap analysis AI",
+        "AI-powered social listening", "Automated sentiment tracking", "Brand mention monitoring bot", "Review response automation",
+        "Automated FAQ generation AI", "Customer inquiry classification", "Smart ticket routing system", "Auto-suggested knowledge base articles",
+        "AI-powered voice assistants", "IVR automation for phone support", "Automated appointment scheduling", "Callback request automation",
+        "Order status notification AI", "Shipping delay prediction alerts", "Out-of-stock notification automation", "Back-in-stock alert system",
+        "Automated feedback collection", "Post-purchase survey AI", "Customer satisfaction scoring", "NPS survey automation",
+        "Loyalty program automation", "Points tracking AI system", "Automated reward distribution", "Tier progression automation",
+        "Referral program tracking AI", "Affiliate fraud detection", "Commission calculation automation", "Payout scheduling AI",
+        "Automated invoice generation", "Payment reconciliation AI", "Subscription billing automation", "Dunning management system",
+        "Automated tax calculation AI", "Multi-currency conversion automation", "Exchange rate adjustment bot", "International compliance AI",
+        "Automated customs documentation", "Duty calculation automation", "Shipping label generation bot", "Tracking number auto-sync",
+        "Inventory sync across channels", "Order routing optimization AI", "Split shipment automation", "Drop-ship automation AI",
+        "Supplier order automation", "Purchase order matching AI", "Receiving confirmation bot", "Quality inspection workflow",
+        "Automated restock alerts", "Low inventory prediction AI", "Dead stock identification", "Seasonal demand forecasting",
+        "Automated reporting dashboards", "Scheduled report generation", "Data visualization automation", "KPI tracking bot",
+        "Automated data backup systems", "Security monitoring AI", "Fraud detection automation", "Unusual pattern alert AI",
+        "Automated GDPR compliance checks", "Data retention automation", "Consent management system", "Automated data deletion"
+    ];
+    
+    const grid = document.getElementById('skillsGrid');
+    aiAutomationSkills.forEach(skill => {
+        const card = document.createElement('a');
+        card.className = 'skill-card';
+        card.href = `skill-detail-ai.html?skill=${encodeURIComponent(skill)}&category=automation&price=200-8000`;
+        card.innerHTML = `<h3><i class="fas fa-robot"></i> ${skill}</h3><p>💰 Price: $200 - $8,000+ • Click to solve →</p>`;
+        grid.appendChild(card);
+    });
+</script>
+</body>
+</html>
