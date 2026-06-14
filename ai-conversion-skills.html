@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AI Conversion & Analytics – Primal Lux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', sans-serif; background:#FCFCF8; color:#1A2A2A; line-height:1.5; }
+        :root { --charcoal:#1E2F2F; --forest:#0F3B2C; --gold:#D4AF37; --border-light:#E8EBE4; }
+        .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+        
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; flex-wrap:wrap; gap:0.8rem; background:white; border-radius:60px; margin-top:1rem; border:1px solid var(--border-light); }
+        .logo-img { height:40px; width:auto; }
+        .nav-links { display:flex; gap:1.2rem; flex-wrap:wrap; }
+        .nav-links a { color:var(--charcoal); text-decoration:none; font-weight:500; font-size:0.85rem; }
+        .nav-links a:hover { color:var(--gold); }
+        
+        .page-header { background:linear-gradient(135deg, var(--forest), #1C553F); color:white; border-radius:32px; padding:2rem; margin:2rem 0; text-align:center; }
+        .page-header h1 { font-size:2rem; margin-bottom:0.5rem; }
+        
+        .skills-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:2rem 0; }
+        .skill-card { background:white; border-radius:20px; padding:1rem 1.2rem; border:1px solid var(--border-light); transition:0.2s; cursor:pointer; text-decoration:none; display:block; color:inherit; }
+        .skill-card:hover { border-color:var(--gold); background:#FFFCF5; transform:translateX(4px); }
+        .skill-card h3 { font-size:1rem; color:var(--forest); display:flex; align-items:center; gap:8px; }
+        .skill-card h3 i { color:var(--gold); }
+        .skill-card p { font-size:0.75rem; color:#5A6E6E; margin-top:0.3rem; }
+        
+        .back-link { display:inline-block; margin:1rem 0; color:var(--forest); text-decoration:none; font-weight:600; }
+        footer { padding:2rem 0; text-align:center; color:#6B7B7B; font-size:0.75rem; margin-top:2rem; border-top:1px solid var(--border-light); }
+        
+        @media (min-width:768px) {
+            .skills-grid { grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+            .logo-img { height:50px; }
+        }
+        @media (min-width:1024px) {
+            .skills-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:480px) {
+            .navbar { flex-direction:column; align-items:center; }
+            .page-header h1 { font-size:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="index.html"><img class="logo-img" src="https://res.cloudinary.com/drldven2x/image/upload/file_00000000dfe87243a1d39499b72efbcf_d1lufh.png" alt="Primal Lux Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <a href="work.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to AI Solutions</a>
+    
+    <div class="page-header">
+        <h1><i class="fas fa-chart-line"></i> AI Conversion & Analytics</h1>
+        <p>Click any AI solution below to get a price quote ($150 - $5,000+) and connect with an expert</p>
+    </div>
+    
+    <div class="skills-grid" id="skillsGrid"></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size:1.2rem; margin-bottom:0.3rem; font-weight:600;">PRIMAL LUX AI</div>
+        <div>AI-powered solutions for every e-commerce platform & online business</div>
+        <p>© 2026 Primal Lux. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const aiConversionSkills = [
+        "Predictive customer behavior analytics", "AI-powered conversion rate optimization", "Machine learning sales forecasting", "Customer lifetime value prediction AI",
+        "Churn prediction & prevention AI", "Personalized product recommendations engine", "Dynamic pricing optimization AI", "Cart abandonment prediction AI",
+        "Customer segmentation using AI clustering", "Sentiment analysis on customer feedback", "AI heatmap & behavior analysis", "Session replay AI analysis",
+        "Funnel drop-off prediction AI", "A/B testing with AI statistical significance", "Multi-armed bandit experimentation", "AI attribution modeling",
+        "Customer journey mapping with AI", "Purchase intent prediction models", "Real-time personalization AI", "Next-best-action recommendation AI",
+        "AI-powered audience segmentation", "Lookalike audience generation AI", "Customer persona generation with AI", "Behavioral scoring models",
+        "AI sales prediction dashboards", "Automated KPI alerting systems", "Real-time analytics with AI insights", "Predictive inventory management",
+        "Demand forecasting AI", "Price elasticity modeling", "Competitor price monitoring AI", "Dynamic discount optimization",
+        "AI coupon personalization", "Bundle recommendation engine", "Cross-sell prediction AI", "Upsell opportunity detection",
+        "Customer next purchase prediction", "Replenishment prediction AI", "Subscription churn prediction", "LTV-based marketing automation",
+        "AI marketing mix modeling", "Campaign performance prediction", "Ad spend optimization AI", "ROAS prediction models",
+        "Customer acquisition cost prediction", "Attribution window optimization", "Marketing channel optimization AI", "Budget allocation AI",
+        "Product affinity analysis AI", "Market basket analysis", "Association rule mining", "Customer preference learning",
+        "Real-time recommendation updates", "Contextual bandit algorithms", "Collaborative filtering systems", "Content-based filtering AI",
+        "Hybrid recommendation engines", "Sequence-aware recommendations", "Session-based recommendations", "Cold-start problem solving AI",
+        "AI dashboard creation (Looker, Tableau)", "Automated insight generation", "Natural language query for analytics", "AI-powered data storytelling",
+        "Predictive lead scoring", "Sales opportunity detection AI", "Customer health scoring", "Renewal prediction AI",
+        "Win-back probability scoring", "Loyalty program optimization AI", "Points redemption prediction", "Reward personalization AI",
+        "Customer effort score AI", "Sentiment-driven support routing", "AI ticket prioritization", "Automated response suggestions",
+        "Voice of customer analysis", "Review sentiment aggregation", "Social listening AI", "Brand mention tracking AI",
+        "Competitive intelligence AI", "Market trend detection", "Emerging opportunity identification", "Risk assessment AI",
+        "Fraud detection AI", "Payment risk scoring", "Abnormal pattern detection", "Bot traffic identification",
+        "AI-powered search relevance", "Search query understanding", "Semantic search implementation", "Visual search AI",
+        "Voice search optimization", "AI product tagging automation", "Automated categorization systems", "Image recognition for products"
+    ];
+    
+    const grid = document.getElementById('skillsGrid');
+    aiConversionSkills.forEach(skill => {
+        const card = document.createElement('a');
+        card.className = 'skill-card';
+        card.href = `skill-detail-ai.html?skill=${encodeURIComponent(skill)}&category=conversion&price=150-5000`;
+        card.innerHTML = `<h3><i class="fas fa-chart-line"></i> ${skill}</h3><p>💰 Price: $150 - $5,000+ • Click to solve →</p>`;
+        grid.appendChild(card);
+    });
+</script>
+</body>
+</html>
